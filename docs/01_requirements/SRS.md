@@ -9,11 +9,11 @@ Requirements specified include:
 
 ## 1. Use Cases
 Possible use cases for this system are:
-- **High-precision heater driver**
+- **High-precision heater driver** </br>
   User might use this device as a driver for the resistive heater element. Constant power mode guarantees stable temperature despite resistance change proportional to temperature. This might act as a portable *Hot Wire Cutter*. Other than that, possible usages might be as *Heated Wearable Tech*, *Aroma Heater*, *Pyrotechnic Igniter* or *High Current Soldering Station*.
 
-- **Diagnostic and testing**
+- **Diagnostic and testing** </br>
   User might use this system as *High Current Paths Tester*. This configuration allows testing high current paths on PCBs, various connectors, cables, and quality of solder connections.
 
-- **Glow Plug Driver**
+- **Glow Plug Driver** </br>
   User might use this system to drive glow plugs in RC models. Those require low voltages with high currents.
