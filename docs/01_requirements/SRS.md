@@ -1,0 +1,19 @@
+# System Requirements Specification
+Requirements specified include:
+- **1. Use Cases:** potential use cases for the product as a standalone device and daughter system for larger applications.
+- **2. Input Power Source Profile:** definition of input voltage range and characteristics of input source.
+- **3. Power Output & Dynamic Load Requirements:** definition on output power characteristics and range of loads.
+- **4. Mechanical & Environmental Constraints:** definition of size and approximation of durability in standalone version.
+- **5. User interface:** definition of power setting by user, both in standalone and subsystem versions.
+- **6. Safety & Protection Matrix:** definition of possible faults, their level of danger, and implemented protection protocols.
+
+## 1. Use Cases
+Possible use cases for this system are:
+- **High-precision heater driver**
+  User might use this device as a driver for the resistive heater element. Constant power mode guarantees stable temperature despite resistance change proportional to temperature. This might act as a portable *Hot Wire Cutter*. Other than that, possible usages might be as *Heated Wearable Tech*, *Aroma Heater*, *Pyrotechnic Igniter* or *High Current Soldering Station*.
+
+- **Diagnostic and testing**
+  User might use this system as *High Current Paths Tester*. This configuration allows testing high current paths on PCBs, various connectors, cables, and quality of solder connections.
+
+- **Glow Plug Driver**
+  User might use this system to drive glow plugs in RC models. Those require low voltages with high currents.
