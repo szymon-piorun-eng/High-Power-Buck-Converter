@@ -22,3 +22,10 @@ Possible use cases for this system are:
 
 - **Glow Plug Driver** </br>
   User might use this system to drive glow plugs in RC models. Those require low voltages with high currents.
+
+## 2. Input Power Source Profile
+Standalone version of this system will be powerd with two Li-Ion batteries in series.
+
+# Iput voltage range
+Configuration chosen for this device imposes:
+**input voltage (*V*~in)** 
