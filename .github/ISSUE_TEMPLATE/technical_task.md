@@ -8,6 +8,10 @@ assignees: 'szymon-piorun-eng'
 ---
 
 ## Technical Description
+## Constraints & Requirements
+- **Hardware/Physical:** (e.g., Thermal limits, PCB space, 2S Li-ion voltage swing)
+- **Firmware/Logic:** (e.g., RTOS timing, interrupt priority, DAC resolution)
+- **Safety:** (e.g., Fail-safe states, OCP thresholds)
 
 ## Traceability (V-Model)
 - **Parent Requirement:** [e.g., SRS-001]
@@ -16,7 +20,7 @@ assignees: 'szymon-piorun-eng'
 
 ---
 
-## ✅ Definition of Done (DoD)
+## Definition of Done (DoD)
 - [ ] Technical analysis/design is documented in the `/docs` or `/hardware` folder.
 - [ ] Critical calculations (if any) are verified and stored in `tools/` or `docs/`.
 - [ ] Design matches the Safety Matrix constraints.
@@ -24,3 +28,4 @@ assignees: 'szymon-piorun-eng'
 - [ ] All related files are pushed to the feature branch and a Pull Request is opened.
 
 ---
+## Attachments
