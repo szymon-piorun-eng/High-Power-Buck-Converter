@@ -1,6 +1,6 @@
 ---
 name: "Technical Task / Requirement"
-about: Template for hardware, firmware, and analysis tasks within the V-Model.
+about: Template for requirements analysis tasks within the V-Model.
 title: "[TASK]: "
 labels: ["type:requirement", "status:triage"]
 assignees: 'szymon-piorun-eng'
@@ -8,24 +8,13 @@ assignees: 'szymon-piorun-eng'
 ---
 
 ## Technical Description
-## Constraints & Requirements
-- **Hardware/Physical:** (e.g., Thermal limits, PCB space, 2S Li-ion voltage swing)
-- **Firmware/Logic:** (e.g., RTOS timing, interrupt priority, DAC resolution)
-- **Safety:** (e.g., Fail-safe states, OCP thresholds)
 
 ## Traceability (V-Model)
-- **Parent Requirement:** [e.g., SRS-001]
-- **Verification Method:** [e.g., Simulation / Bench Test / Code Review]
-- **Milestone:** [e.g., Requirements Analysis]
+- **Parent Requirement:**  `/docs/vision/PRJ_VISION_01.md`
+- **Milestone:** Requirements Analysis
 
 ---
 
 ## Definition of Done (DoD)
-- [ ] Technical analysis/design is documented in the `/docs` or `/hardware` folder.
-- [ ] Critical calculations (if any) are verified and stored in `tools/` or `docs/`.
-- [ ] Design matches the Safety Matrix constraints.
-- [ ] Peer-review / Self-review completed.
-- [ ] All related files are pushed to the feature branch and a Pull Request is opened.
-
----
-## Attachments
+- [ ] Technical analysis/design is documented in the `/docs`  folder.
+- [ ] All related files are pushed to the requirements branch and a Pull Request is opened.
