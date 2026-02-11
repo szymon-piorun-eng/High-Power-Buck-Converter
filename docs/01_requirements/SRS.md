@@ -1,10 +1,15 @@
 # System Requirements Specification
 Requirements specified include:</br>
-1. [Use Cases](#1-use-cases) potential use cases for the product as a standalone device and daughter system for larger applications.</br>
-2. [Input Power Source Profile](#2-input-power-source-profile) definition of input voltage range and characteristics of input source.</br>
-3. [Power Output & Dynamic Load Requirements](#3-power-output--dynamic-load-requirements) definition on output power characteristics and range of loads.</br>
-4. [Mechanical & Environmental Constraints](#4-mechanical--environmental-constraints) definition of size and approximation of durability in standalone version.</br>
-5. [User interface](#5-user-interface) definition of power setting by user, both in standalone and subsystem versions.</br>
+1. [Use Cases](#1-use-cases) potential use cases for the product as a standalone device and daughter system for larger applications.
+</br>
+2. [Input Power Source Profile](#2-input-power-source-profile) definition of input voltage range and characteristics of input source.
+</br>
+3. [Power Output & Dynamic Load Requirements](#3-power-output--dynamic-load-requirements) definition on output power characteristics and range of loads.
+</br>
+4. [Mechanical & Environmental Constraints](#4-mechanical--environmental-constraints) definition of size and approximation of durability in standalone version.
+</br>
+5. [User interface](#5-user-interface) definition of power setting by user, both in standalone and subsystem versions.
+</br>
 6. [Safety & Protection Matrix](#6-safety--protection-matrix) definition of possible faults, their level of danger, and implemented protection protocols.
 
 ## 1. Use Cases
