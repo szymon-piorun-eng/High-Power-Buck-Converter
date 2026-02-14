@@ -1,0 +1,16 @@
+site_name: High Power Buck Converter
+site_url: https://szymon-piorun-eng.github.io/High-Power-Buck-Converter/
+repo_url: https://github.com/szymon-piorun-eng/High-Power-Buck-Converter
+repo_name: GitHub
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
