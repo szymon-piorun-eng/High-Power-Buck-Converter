@@ -56,14 +56,13 @@ Input source of this device in standalone version is **2X High-Current Li-Ion 18
 - **Standby**
 <center>
 
-|                                              Description                                              |                     Symbol                      |     Min      |   Typ    |      Max       |            Unit             |       Requirement Code        |
-|:-----------------------------------------------------------------------------------------------------:|:-----------------------------------------------:|:------------:|:--------:|:--------------:|:---------------------------:|:-----------------------------:|
-|                                        Operating Input Voltage                                        |                    $V_{in}$                     |    $6.1$     |  $7.2$   |      $10$      |             $V$             | REQ_INP_001 {: #REQ_INP_001 } |
-|                                          Input Current Draw                                           |                    $I_{in}$                     |      -       |  [TBD]   |     [TBD]      |           $\mu A$           |          REQ_INP_002          |
-|                                          Active Mode lockout                                          |     $V_{th(Active)}$ <br> $t_{th(Active)}$      | $6.4$ <br> - | - <br> - |  - <br> $95$   |    $V$ <br> $\degree C$     | REQ_INP_003 <br> REQ_INP_004  |
-|                                        Restricted mode lockout                                        |              $t_{th(Restricted)}$               |      -       |    -     |       95       |         $\degree C$         |          REQ_INP_005          |
-|                                    Auto Deep Sleep mode activation                                    |               $V_{th(DeepSleep)}$               |    $6.0$     |    -     |       -        |             $V$             |          REQ_INP_006          |
-| Auto Restricted mode activation in case of low quality source detection or over-temperature detection | $Z_{src(Restricted)}$ <br> $t_{th(Restricted)}$ |   - <br> -   | - <br> - | $70$ <br> $70$ | $m \Omega$ <br> $\degree C$ | REQ_INP_007 <br> REQ_INP_008  |
+|               Description                |        Symbol        |  Min  |  Typ  |  Max  |  Unit   |
+|:----------------------------------------:|:--------------------:|:-----:|:-----:|:-----:|:-------:|
+|         Operating Input Voltage          |       $V_{in}$       | $6.1$ | $7.2$ | $10$  |   $V$   |
+|            Input Current Draw            |       $I_{in}$       |   -   | [TBD] | [TBD] | $\mu A$ |
+|           Active Mode lockout            | $V_{th(AcvtieMode)}$ | $6.4$ |   -   |   -   |   $V$   |
+| Auto, Latched Deep Sleep mode activation | $V_{th(DeepSleep)}$  | $6.0$ |   -   |   -   |   $V$   |
+| Auto Restricted mode activation in case of low quality source detection or over-temperature detection | $V_{sag}$ <br> $t_{th(Restricted)}$ | - <br> - | - <br> - | $1.4$ <br> $70$ | $V$ <br> $\degree C$
 
 
 
