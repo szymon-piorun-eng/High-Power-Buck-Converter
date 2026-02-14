@@ -10,8 +10,6 @@ theme:
     - content.code.copy
 
 markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
   - attr_list
   - admonition
   - pymdownx.highlight:
