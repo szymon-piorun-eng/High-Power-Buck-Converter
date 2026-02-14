@@ -5,6 +5,7 @@ repo_name: GitHub
 
 theme:
   name: material
+  custom_dir: _CONFIG
   features:
     - navigation.tabs
     - content.code.copy
