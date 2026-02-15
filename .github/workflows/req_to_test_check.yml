@@ -1,12 +1,10 @@
-name: Reqirement to Test Traceability Check
+name: Requirement to Test Traceability Check
 
 on:
   pull_request:
     branches: 
       - "main"
       - "Requirements-Analysis" 
-    paths:
-      - 'docs/**'
 
 jobs:
   verify-coverage:
