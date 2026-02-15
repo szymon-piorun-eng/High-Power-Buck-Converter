@@ -3,6 +3,10 @@ site_url: https://szymon-piorun-eng.github.io/High-Power-Buck-Converter/
 repo_url: https://github.com/szymon-piorun-eng/High-Power-Buck-Converter
 repo_name: GitHub
 
+plugins:
+  - search
+  - include-markdown
+
 theme:
   name: material
   custom_dir: .github/_CONFIG
