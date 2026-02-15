@@ -1,6 +1,6 @@
 # System Requirements Specification
 
-Requirements specified include:<br>
+Requirements specified include:
 
 1. [Use Cases](#1-use-cases) potential use cases for the product as a standalone device and daughter system for larger applications.
 
@@ -18,14 +18,14 @@ Requirements specified include:<br>
 
 The system is designed as a versatile High-Performance Low-Voltage Power Controller. Possible applications include:
 
-- **Precision Resistive Load Driver** </br>
+- **Precision Resistive Load Driver** 
 
     Acts as a high-fidelity driver for various heating elements. The implemented Constant Power Mode ensures stable thermal output regardless of the element's resistance drift due to temperature coefficient (TCR). Applications include:
 
   - Portable **Hot Wire Cutter**,
-  - **High-Current Micro-Soldering Station**
-  - Driver for **Heated Wearable Technology**
-  - Control system for **Thermal Actuators**
+  - **High-Current Micro-Soldering Station**,
+  - Driver for **Heated Wearable Technology**,
+  - Control system for **Thermal Actuators**.
 
 - **Diagnostic and Validatino Tool (PCB/Harness)**
 
@@ -41,85 +41,67 @@ The system is designed as a versatile High-Performance Low-Voltage Power Control
 
 Input source of this device in standalone version is **2X High-Current Li-Ion 18650** cells in series (Sony Murata VTC series or similar).
 
-<center>
-
 |      Parameter      |  Symbol   |  Min  |  Typ  |  Max  |   Unit    |
 |:-------------------:|:---------:|:-----:|:-----:|:-----:|:---------:|
 |    Input Voltage    | $V_{in}$  | $5.0$ | $7.2$ | $8.4$ |    $V$    |
 |    Input Current    | $I_{in}$  | $25$  | $35$  |   -   |    $A$    |
 | Internal Resistance | $R_{int}$ |   -   | $15$  | $20$  | $m\Omega$ |
 
-</center>
 
 ### 2.2 Power Modes
 
 - **Standby**
-<center>
 
-|               Description                |        Symbol        |  Min  |  Typ  |  Max  |  Unit   |
-|:----------------------------------------:|:--------------------:|:-----:|:-----:|:-----:|:-------:|
-|         Operating Input Voltage          |       $V_{in}$       | $6.1$ | $7.2$ | $10$  |   $V$   |
-|            Input Current Draw            |       $I_{in}$       |   -   | [TBD] | [TBD] | $\mu A$ |
-|           Active Mode lockout            | $V_{th(AcvtieMode)}$ | $6.4$ |   -   |   -   |   $V$   |
-| Auto, Latched Deep Sleep mode activation | $V_{th(DeepSleep)}$  | $6.0$ |   -   |   -   |   $V$   |
-| Auto Restricted mode activation in case of low quality source detection or over-temperature detection | $V_{sag}$ <br> $t_{th(Restricted)}$ | - <br> - | - <br> - | $1.4$ <br> $70$ | $V$ <br> $\degree C$
+|                                              Description                                              |               Symbol                |   Min    |   Typ    |       Max       |         Unit         | Requirement Code |
+|:-----------------------------------------------------------------------------------------------------:|:-----------------------------------:|:--------:|:--------:|:---------------:|:--------------------:|:--:|
+|                                        Operating Input Voltage                                        |              $V_{in}$               |  $6.1$   |  $7.2$   |      $10$       |         $V$          |REQ_INP_001|
+|                                          Input Current Draw                                           |              $I_{in}$               |    -     |  [TBD]   |      [TBD]      |       $\mu A$        |REQ_INP_002|
+|                                          Active Mode lockout                                          |        $V_{th(AcvtieMode)}$         |  $6.4$   |    -     |        -        |         $V$          |REQ_INP_003|
+|                               Auto Deep Sleep mode activation                                |         $V_{th(DeepSleep)}$         |  $6.0$   |    -     |        -        |         $V$          |REQ_INP_004|
+| Auto Restricted mode activation in case of low quality source detection or over-temperature detection | $V_{sag}$ <br> $t_{th(Restricted)}$ | - <br> - | - <br> - | $1.4$ <br> $70$ | $V$ <br> $^\circ C$ |REQ_INP_005 <br> REQ_INP_006 |
 
-
-
-</center>
 
 -------------
 
 - **Deep Sleep**
 
-<center>
 
 |       Description       |  Symbol  |  Min  |  Typ  |  Max  |  Unit   | Requirement Code |
 |:-----------------------:|:--------:|:-----:|:-----:|:-----:|:-------:|:----------------:|
 | Operating Input Voltage | $V_{in}$ | $5.1$ | $7.2$ | $10$  |   $V$   |   REQ_INP_009    |
 |      Input Current      | $I_{in}$ |   -   | [TBD] | [TBD] | $\mu A$ |   REQ_INP_010    |
 
-</center>
 
 ------------
 
 - **Active**
 
-<center>
 
 |        Description         |      Symbol       |  Min  |  Typ  |  Max  |    Unit     | Requirement Code |
 |:--------------------------:|:-----------------:|:-----:|:-----:|:-----:|:-----------:|:----------------:|
 |  Operating Input Voltage   |     $V_{in}$      | $5.1$ | $7.2$ | $10$  |     $V$     |   REQ_INP_011    |
 |       Input Current        |     $I_{in}$      |   -   |   -   | $20$  |     $A$     |   REQ_INP_012    |
-| Auto Standby mode entering | $t_{th(Standby)}$ |   -   |   -   | $105$ | $\degree C$ |   REQ_INP_013    |
+| Auto Standby mode entering | $t_{th(Standby)}$ |   -   |   -   | $105$ | $^\circ C$ |   REQ_INP_013    |
 
-</center>
- 
+
 ---------------
 
 - **Restricted**
-
-<center>
 
 |        Description         |      Symbol       |  Min  |  Typ  |  Max  |    Unit     | Requirement Code |
 |:--------------------------:|:-----------------:|:-----:|:-----:|:-----:|:-----------:|:----------------:|
 |  Operating Input Voltage   |     $V_{in}$      | $5.1$ | $7.2$ | $10$  |     $V$     |   REQ_INP_014    |
 |       Input Current        |     $I_{in}$      |   -   |   -   | $10$  |     $A$     |   REQ_INP_015    |
-| Auto Standby mode entering | $t_{th(Standby)}$ |   -   |   -   | $105$ | $\degree C$ |   REQ_INP_016    |
-| Auto Active mode entering  | $t_{th(Active)}$  |   -   |   -   | $50$  | $\degree C$ |   REQ_INP_017    |
-
-</center>
+| Auto Standby mode entering | $t_{th(Standby)}$ |   -   |   -   | $105$ | $^\circ C$ |   REQ_INP_016    |
+| Auto Active mode entering  | $t_{th(Active)}$  |   -   |   -   | $50$  | $^\circ C$ |   REQ_INP_017    |
 
 ------------
 
 - **Fail-Safe**
-
-<center>
 
 |               Description               |                   Symbol                   |    Min     |   Typ    |      Max       |     Unit     |       Requirement Code       |
 |:---------------------------------------:|:------------------------------------------:|:----------:|:--------:|:--------------:|:------------:|:----------------------------:|
 | Continuous Input Voltage without damage |                  $V_{in}$                  |   $-30$    |    -     |      $30$      |     $V$      |         REQ_INP_018          |
 |      Auto Fail-Safe mode entering       | $I_{th(FailSafe)}$ <br> $V_{th(FailSafe)}$ | - <br> $5$ | - <br> - | $25$ <br> $12$ | $A$ <br> $V$ | REQ_INP_019 <br> REQ_INP_020 |
 
-</center>
 
