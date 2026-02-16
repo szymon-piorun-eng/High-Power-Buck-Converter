@@ -1,0 +1,33 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Actuators",
+    "DUT",
+    "Fail-Safe",
+    "Harness",
+    "High-Current",
+    "Li-Ion",
+    "lockout, overcurrent",
+    "Micro-Soldering",
+    "Murata",
+    "overcurrent",
+    "PCB",
+    "PDN",
+    "Restricted",
+    "SWD",
+    "TCR",
+    "Validation",
+    "VTC",
+    "Wait"
+  ],
+  "ignorePaths": [
+    ".github/**",
+    "site/**"
+  ],
+  "ignoreRegExpList": [
+    "/\\{:.*?\\}/",
+    "/\\$.*?\\$/",
+    "/REQ_[A-Z]+_\\d+/"
+  ]
+}
