@@ -243,3 +243,45 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 
 * *Pass*{: style="color: green" } : Checks in steps 8, 10, 13 passed. 
 * *Fail*{: style="color: red" } : Any of the checks in steps 8, 10, 13 failed.
+
+---
+
+## TST_INP_008
+* **Name:** Auto Restricted mode activation in case of high temperature in input section. 
+* **Traceability:** [REQ_INP_008](../01_requirements/SRS.md/#REQ_INP_008)
+* **Type:** Laboratory
+* **Status:** Draft
+
+**Test Equipment**
+
+* Device Under Test,
+* Power supply,
+* Hot air station,
+* Thermal camera,
+* SWD probe and debugging software.
+
+**Test Setup**
+
+* DUT and all other equipment should be room temperature ($\approx 25$ $^\circ C$).
+* Connect resistive load to output.
+* Configure DUT to enter Standby mode.
+
+**Procedure:**
+
+1. Set the power supply to $7.2$ $V$.
+2. Set output power to $20$ $W$ via user interface. 
+2. Attempt entering Active mode via user interface. 
+3. Check if [Standby mode variable name TBD] is set to *false* AND Check if [Active mode variable name TBD] is set to *true* AND Check if [Restricted mode variable name TBD] is set to *false*.
+4. Heat input section to $\approx 70$ $^\circ C$.
+5. Check if [Standby mode variable name TBD] is set to *false* AND Check if [Active mode variable name TBD] is set to *false* AND Check if [Restricted mode variable name TBD] is set to *true*.
+6. Enter Standby mode via use interface.
+7. Heat input section to $\approx 70$ $^\circ C$.
+8. Attempt entering Active mode via user interface. 
+9. Check if [Standby mode variable name TBD] is set to *false* AND Check if [Active mode variable name TBD] is set to *false* AND Check if [Restricted mode variable name TBD] is set to *true*.
+
+**Result**
+
+* *Pass*{: style="color: green" } : Checks in step 4, 6 passed. 
+* *Fail*{: style="color: red" } : Any of the checks in step 4, 6 failed.
+
+---
