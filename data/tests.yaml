@@ -1,0 +1,67 @@
+
+equipment:
+  general:
+    - "DUT"
+  laboratory:
+    - "Oscilloscope"
+    - "Multimeter"
+    - "Programmable power supply"
+    - "SWD debugger"
+    - "Hot air station"
+    - "Thermal camera"
+    - "Electronic load"
+TST_INP_001:
+  id: "**TST_INP_001**{: #TST_INP_001 }"
+  title: "Operating input voltage in Standby mode"
+  metadata: 
+    type: "Laboratory"
+    status: "Draft"
+    
+TST_INP_002:
+  id: "**TST_INP_002**{: #TST_INP_002 }"
+  title: "Input current draw in Standby mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_003:
+  id: "**TST_INP_003**{: #TST_INP_003 }"
+  title: "Active mode lockout in case of low input voltage"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_004:
+  id: "**TST_INP_004**{: #TST_INP_004 }"
+  title: "Active mode lockout in case of high temperature"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_005:
+  id: "**TST_INP_005**{: #TST_INP_005 }"
+  title: "Restricted mode lockout in case of high temperature"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_006:
+  id: "**TST_INP_006**{: #TST_INP_006 }"
+  title: "Deep Sleep mode activation in case of low input voltage"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_007:
+  id: "**TST_INP_007**{: #TST_INP_007 }"
+  title: "Auto Restricted mode activation in case of high source impedance"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_008:
+  id: "**TST_INP_008**{: #TST_INP_008 }"
+  title: "Auto Restricted mode activation in case of high temperature in input section"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
