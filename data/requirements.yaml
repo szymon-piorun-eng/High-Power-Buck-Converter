@@ -155,7 +155,7 @@ modes:
           symbol: "$I_{in}$"
           min: "$-$"
           typ: "$-$"
-          max: "$10$"
+          max: "$15$"
           unit: "$A$"
           requirement_code: "**REQ_INP_015**{: #REQ_INP_015 }"
         auto_standby_entering:
