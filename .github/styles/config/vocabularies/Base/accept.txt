@@ -1,2 +1,8 @@
-overcurrent,
+overcurrent
 multimeters
+DUT
+DCR
+PCB
+TCR
+VTC
+PDN
