@@ -16,7 +16,7 @@ Requirements specified include:
 
 ## 1. Use cases
 
-The system is designed as a versatile High-Performance Low-Voltage Power Controller. Possible applications include:
+This versatile High-Performance Low-Voltage Power Controller manages a wide range of applications, including:
 
 - **Precision Resistive Load Driver** Acts as a high-fidelity driver for various heating elements. The implemented Constant Power Mode ensures stable thermal output regardless of the element's resistance drift due to temperature coefficient (TCR). Applications include:
 
@@ -39,34 +39,34 @@ The system is designed as a versatile High-Performance Low-Voltage Power Control
 
 Input source of this device in standalone version is **2X High-Current Li-Ion 18650** cells in series (Sony Murata VTC series or similar).
 
-{{ render_extras_table('extras.tables.input_source_physical_characteristics') }}
+{{ render_req_table('extras.tables.input_source_physical_characteristics') }}
 
 ### 2.2 Power modes
 
 - **Standby**
 
-{{ render_extras_table('modes.standby.input_power') }}
+{{ render_req_table('modes.standby.input_power') }}
 
----;
+---
 
 - **Deep Sleep**
 
-{{ render_extras_table('modes.deep_sleep.input_power') }}
+{{ render_req_table('modes.deep_sleep.input_power') }}
 
----;
+---
 
 - **Active**
 
-{{ render_extras_table('modes.active.input_power') }}
+{{ render_req_table('modes.active.input_power') }}
 
----;
+---
 
 - **Restricted**
 
-{{ render_extras_table('modes.restricted.input_power') }}
+{{ render_req_table('modes.restricted.input_power') }}
 
----;
+---
 
 - **Fail-Safe**
 
-{{ render_extras_table('modes.fail_safe.input_power') }}
+{{ render_req_table('modes.fail_safe.input_power') }}
