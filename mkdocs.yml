@@ -28,6 +28,7 @@ plugins:
       include_yaml:
         - data/requirements.yaml
         - data/tests.yaml
+        - data/parameters.yaml
 
 markdown_extensions:
   - attr_list            
