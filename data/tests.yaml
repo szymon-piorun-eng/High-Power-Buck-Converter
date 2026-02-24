@@ -65,3 +65,87 @@ TST_INP_008:
   metadata:
     type: "Laboratory"
     status: "Draft"
+
+TST_INP_009:
+  id: "**TST_INP_009**{: #TST_INP_009 }"
+  title: "Operating input voltage in Deep Sleep mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_010:
+  id: "**TST_INP_010**{: #TST_INP_010 }"
+  title: "Input current in Deep Sleep mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_011:
+  id: "**TST_INP_011**{: #TST_INP_011 }"
+  title: "Operating input voltage in Active mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_012:
+  id: "**TST_INP_012**{: #TST_INP_012 }"
+  title: "Max input current in Active mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_013:
+  id: "**TST_INP_013**{: #TST_INP_013 }"
+  title: "Auto Standby mode entering from Active mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_014:
+  id: "**TST_INP_014**{: #TST_INP_014 }"
+  title: "Operating input voltage in Restricted mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_015:
+  id: "**TST_INP_015**{: #TST_INP_015 }"
+  title: "Max input current in Restricted mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_016:
+  id: "**TST_INP_016**{: #TST_INP_016 }"
+  title: "Auto Standby mode entering from Restricted mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_017:
+  id: "**TST_INP_017**{: #TST_INP_017 }"
+  title: "Auto Active mode entering from Restricted mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_018:
+  id: "**TST_INP_018**{: #TST_INP_018 }"
+  title: "Fail-Safe input continuous voltage without damage"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_019:
+  id: "**TST_INP_019**{: #TST_INP_019 }"
+  title: "Auto Fail-Safe mode entering in case of input over-current"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_020:
+  id: "**TST_INP_020**{: #TST_INP_020 }"
+  title: "Auto Fail-Safe mode entering in case of over or under input voltage"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
