@@ -1,5 +1,5 @@
-import yaml
 import os
+from scripts.macros.helpers.load_yaml_cached import load_yaml
 
 def get_all_requirements(data):
     req_codes = set()
@@ -30,28 +30,26 @@ def render_test_header(env, test_id, equipment_list=None):
     tests_file = os.path.join(env.project_dir, 'data', 'tests.yaml')
 
     if os.path.exists(req_file):
-      with open(req_file, 'r', encoding='utf-8') as f:
-        req_data = yaml.safe_load(f)
-        known_req_codes = get_all_requirements(req_data)   
+      req_data = load_yaml(req_file)
+      known_req_codes = get_all_requirements(req_data)   
     else:
-      return f'!!! danger\n    File **{os.path.relpath(req_file, env.project_dir)}** not found.'
+      return f'\n!!! danger\n    File **{os.path.relpath(req_file, env.project_dir)}** not found.'
     
     if os.path.exists(tests_file):
-      with open(tests_file, 'r', encoding='utf-8') as f:
-        raw_test_data = yaml.safe_load(f)
-        defined_equipment = raw_test_data.get('equipment', {})
-        allowed_tools = set(defined_equipment.get('general', []))
+      raw_test_data = load_yaml(tests_file)
+      defined_equipment = raw_test_data.get('equipment', {})
+      allowed_tools = set(defined_equipment.get('general', []))
     else:
-      return f'!!! danger\n    File **{os.path.relpath(tests_file, env.project_dir)}** not found.'
+      return f'\n!!! danger\n    File **{os.path.relpath(tests_file, env.project_dir)}** not found.'
     
     if test_id not in raw_test_data:
-      return f'!!! danger\n    Test **{test_id}** not defined in **{os.path.relpath(tests_file, env.project_dir)}**.'
+      return f'\n!!! danger\n    Test **{test_id}** not defined in **{os.path.relpath(tests_file, env.project_dir)}**.'
     
     test_data = raw_test_data[test_id]
 
     allowed_tools.update(defined_equipment.get(test_data['metadata']['type'].lower(), []))   
 
-    title = f"## {test_data['id']}: {test_data['title']}\n"
+    title = f"{test_data['id']}: {test_data['title']}\n"
 
     req_code = test_id.replace("TST", "REQ")
     metadata = f"!!!info\n    "

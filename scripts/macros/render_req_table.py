@@ -1,9 +1,10 @@
 import yaml
 import os
+from scripts.macros.helpers.load_yaml_cached import load_yaml
 
-def render_extras_table(env, data_path):
-    with open(os.path.join(env.project_dir, 'data', 'requirements.yaml'), 'r', encoding='utf-8') as f:
-        full_data = yaml.safe_load(f)
+def render_req_table(env, data_path):
+    req_file = os.path.join(env.project_dir, 'data', 'requirements.yaml')
+    full_data = load_yaml(req_file)
 
     try:
         data = full_data
