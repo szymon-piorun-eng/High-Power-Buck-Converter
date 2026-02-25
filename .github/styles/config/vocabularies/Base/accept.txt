@@ -6,3 +6,5 @@ PCB
 TCR
 VTC
 PDN
+Deep Sleep
+Fail-Safe
