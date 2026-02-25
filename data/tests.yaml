@@ -1,0 +1,151 @@
+
+equipment:
+  general:
+    - "DUT"
+  laboratory:
+    - "Oscilloscope"
+    - "Multimeter"
+    - "Programmable power supply"
+    - "SWD debugger"
+    - "Hot air station"
+    - "Thermal camera"
+    - "Electronic load"
+TST_INP_001:
+  id: "**TST_INP_001**{: #TST_INP_001 }"
+  title: "Operating input voltage in Standby mode"
+  metadata: 
+    type: "Laboratory"
+    status: "Draft"
+    
+TST_INP_002:
+  id: "**TST_INP_002**{: #TST_INP_002 }"
+  title: "Input current draw in Standby mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_003:
+  id: "**TST_INP_003**{: #TST_INP_003 }"
+  title: "Active mode lockout in case of low input voltage"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_004:
+  id: "**TST_INP_004**{: #TST_INP_004 }"
+  title: "Active mode lockout in case of high temperature"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_005:
+  id: "**TST_INP_005**{: #TST_INP_005 }"
+  title: "Restricted mode lockout in case of high temperature"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_006:
+  id: "**TST_INP_006**{: #TST_INP_006 }"
+  title: "Deep Sleep mode activation in case of low input voltage"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_007:
+  id: "**TST_INP_007**{: #TST_INP_007 }"
+  title: "Auto Restricted mode activation in case of high source impedance"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_008:
+  id: "**TST_INP_008**{: #TST_INP_008 }"
+  title: "Auto Restricted mode activation in case of high temperature in input section"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_009:
+  id: "**TST_INP_009**{: #TST_INP_009 }"
+  title: "Operating input voltage in Deep Sleep mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_010:
+  id: "**TST_INP_010**{: #TST_INP_010 }"
+  title: "Input current in Deep Sleep mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_011:
+  id: "**TST_INP_011**{: #TST_INP_011 }"
+  title: "Operating input voltage in Active mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_012:
+  id: "**TST_INP_012**{: #TST_INP_012 }"
+  title: "Max input current in Active mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_013:
+  id: "**TST_INP_013**{: #TST_INP_013 }"
+  title: "Auto Standby mode entering from Active mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_014:
+  id: "**TST_INP_014**{: #TST_INP_014 }"
+  title: "Operating input voltage in Restricted mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_015:
+  id: "**TST_INP_015**{: #TST_INP_015 }"
+  title: "Max input current in Restricted mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_016:
+  id: "**TST_INP_016**{: #TST_INP_016 }"
+  title: "Auto Standby mode entering from Restricted mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_017:
+  id: "**TST_INP_017**{: #TST_INP_017 }"
+  title: "Auto Active mode entering from Restricted mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_018:
+  id: "**TST_INP_018**{: #TST_INP_018 }"
+  title: "Fail-Safe input continuous voltage without damage"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_019:
+  id: "**TST_INP_019**{: #TST_INP_019 }"
+  title: "Auto Fail-Safe mode entering in case of input over-current"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_INP_020:
+  id: "**TST_INP_020**{: #TST_INP_020 }"
+  title: "Auto Fail-Safe mode entering in case of over or under input voltage"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"

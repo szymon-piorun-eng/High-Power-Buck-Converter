@@ -1,1 +1,11 @@
 overcurrent
+multimeters
+DUT
+DCR
+PCB
+TCR
+VTC
+PDN
+Deep Sleep
+Fail-Safe
+Murata

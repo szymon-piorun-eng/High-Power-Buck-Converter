@@ -1,28 +1,72 @@
-# System Requirements Specification
+# System requirements specification
 
-Requirements specified include:</br>
+Requirements specified include:
 
-1. [Use Cases](#1-use-cases) potential use cases for the product as a standalone device and daughter system for larger applications.
-</br>
-2. [Input Power Source Profile](#2-input-power-source-profile) definition of input voltage range and characteristics of input source.
-</br>
-3. [Power Output & Dynamic Load Requirements](#3-power-output--dynamic-load-requirements) definition on output power characteristics and range of loads.
-</br>
-4. [Mechanical & Environmental Constraints](#4-mechanical--environmental-constraints) definition of size and approximation of durability in standalone version.
-</br>
-5. [User interface](#5-user-interface) definition of power setting by user, both in standalone and subsystem versions.
-</br>
-6. [Safety & Protection Matrix](#6-safety--protection-matrix) definition of possible faults, their level of danger, and implemented protection protocols.
+1. **Use Cases** potential use cases for the product as a standalone device and daughter system for larger applications.
 
-## 1. Use Cases
+2. **Input Power Source Profile** definition of input voltage range and characteristics of input source.
 
-Possible use cases for this system are:
+3. **Power Output & Dynamic Load Requirements** definition on output power characteristics and range of loads.
 
-- **High-precision heater driver** </br>
-  User might use this device as a driver for the resistive heater element. Constant power mode guarantees stable temperature despite resistance change proportional to temperature. This might act as a portable *Hot Wire Cutter*. Other than that, possible usages might be as *Heated Wearable Tech*, *Aroma Heater*, *Pyrotechnic Igniter* or *High Current Soldering Station*.
+4. **Mechanical & Environmental Constraints** definition of size and approximation of durability in standalone version.
 
-- **Diagnostic and testing** </br>
-  User might use this system as *High Current Paths Tester*. This configuration allows testing high current paths on PCB, various connectors, cables, and quality of solder connections.
+5. **User interface** definition of power setting by user, both in standalone and subsystem versions.
 
-- **Glow Plug Driver** </br>
-  User might use this system to drive glow plugs in RC models. Those require low voltages with high currents.
+6. **Safety & Protection Matrix** definition of possible faults, their level of danger, and implemented protection protocols.
+
+## 1. Use cases
+
+This versatile High-Performance Low-Voltage Power Controller manages a wide range of applications, including:
+
+- **Precision Resistive Load Driver** Acts as a high-fidelity driver for various heating elements. The implemented Constant Power Mode ensures stable thermal output regardless of the element's resistance drift due to temperature coefficient (TCR). Applications include:
+
+  - Portable **Hot Wire Cutter**,
+  - **High-Current Micro-Soldering Station**,
+  - Driver for **Heated Wearable Technology**,
+  - Control system for **Thermal Actuators**.
+
+- **Diagnostic and Validation Tool (PCB/Harness)**
+
+    Functions as a **High Current Path Tester**. Enables non-destructive stress testing of printed circuit boards power planes, connectors, and cable harnesses. Ideal for identifying high-resistance points, cold solder joints, and validating power delivery networks (PDN) under load.
+
+- **Glow Plug Driver (RC/Automotive)**
+
+    Provides controlled low-voltage, high-current pulses suitable for driving glow plugs in RC models or auxiliary combustion engines, preventing element burnout through precise current limiting.
+
+## 2. Input power source profile
+
+### 2.1 Physical characteristics of the source
+
+Input source of this device in standalone version is **2X High-Current Li-Ion 18650** cells in series (Sony Murata VTC series or similar).
+
+{{ render_req_table('extras.tables.input_source_physical_characteristics') }}
+
+### 2.2 Power modes
+
+#### **Standby**
+
+{{ render_req_table('modes.standby.input_power') }}
+
+---
+
+#### **Deep Sleep**
+
+{{ render_req_table('modes.deep_sleep.input_power') }}
+
+---
+
+#### **Active**
+
+{{ render_req_table('modes.active.input_power') }}
+
+---
+
+#### **Restricted**
+
+{{ render_req_table('modes.restricted.input_power') }}
+
+---
+
+#### **Fail-Safe**
+
+{{ render_req_table('modes.fail_safe.input_power') }}
