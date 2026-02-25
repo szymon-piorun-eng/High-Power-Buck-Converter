@@ -1,5 +1,5 @@
 meta:
-  version: "0.0.1"
+  version: "0.0.2"
   project: "High Power Buck Converter"
 
 extras:
@@ -175,5 +175,3 @@ modes:
           max: ["$25$", "$12$"]
           unit: ["$A$", "$V$"]
           requirement_code: ["**REQ_INP_019**{: #REQ_INP_019 }", "**REQ_INP_020**{: #REQ_INP_020 }"]
-      software:
-        variables: "[Fail_Safe mode flag]"
