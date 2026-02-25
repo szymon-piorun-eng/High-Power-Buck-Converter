@@ -2,8 +2,8 @@ name: Documentation QA
 
 on:
   pull_request:
-    paths:
-      - 'docs/**/*.md'
+  branches:
+    - Requirement-Analysis
 
 permissions:
   contents: read
