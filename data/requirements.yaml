@@ -5,25 +5,22 @@ meta:
 extras:
   tables:
     input_source_physical_characteristics:
-      columns: ["Description", "Symbol", "Min", "Typ", "Max", "Unit"]
+      columns: ["Description", "Min", "Typ", "Max", "Unit"]
       rows:
         input_voltage:
           description: "Input Voltage"
-          symbol: "$V_{in}$"
           min: "$5.0$"
           typ: "$7.2$"
           max: "$8.4$"
           unit: "$V$"
         input_current:
           description: "Input Current"
-          symbol: "$I_{in}$"
           min: "$25$"
           typ: "$35$"
           max: "$-$"
           unit: "$A$"
         internal_resistance:
           description: "Internal Resistance"
-          symbol: "$R_{int}$"
           min: "$-$"
           typ: "$15$"
           max: "$20$"
@@ -32,11 +29,10 @@ extras:
 modes:
   standby:
     input_power:
-      columns: ["Description", "Symbol", "Min", "Typ", "Max", "Unit", "Requirement Code"]
+      columns: ["Description", "Min", "Typ", "Max", "Unit", "Requirement Code"]
       rows:
         operating_input_voltage:
           description: "Operating Input Voltage"
-          symbol: "$V_{in}$"
           min: "$6.1$"
           typ: "$7.2$"
           max: "$10$"
@@ -45,7 +41,6 @@ modes:
         
         input_current_draw:
           description: "Input Current Draw"
-          symbol: "$I_{in}$"
           min: "$-$"
           typ: "[TBD]"
           max: "[TBD]"
@@ -54,7 +49,6 @@ modes:
 
         active_mode_lockout:
           description: ["Active Mode lockout"]
-          symbol: ["$V_{th(Active)}$", "$t_{th(Active)}$"]
           min: ["$6.4$", "$-$"]
           typ: ["$-$", "$-$"]
           max: ["$-$", "$95$"]
@@ -63,7 +57,6 @@ modes:
 
         restricted_mode_lockout:
           description: "Restricted mode lockout"
-          symbol: "$t_{th(Restricted)}$"
           min: "$-$"
           typ: "$-$"
           max: "$95$"
@@ -72,7 +65,6 @@ modes:
 
         auto_deep_sleep_activation:
           description: "Auto Deep Sleep mode activation"
-          symbol: "$V_{th(DeepSleep)}$"
           min: "$6.0$"
           typ: "$-$"
           max: "$-$"
@@ -81,7 +73,6 @@ modes:
 
         auto_restricted_mode_activation:
           description: ["Auto Restricted mode activation in case of low quality source detection or over-temperature detection"]
-          symbol: ["$Z_{src(Restricted)}$", "$t_{th(Restricted)}$"]
           min: ["$-$", "$-$"]
           typ: ["$-$", "$-$"]
           max: ["$70$", "$70$"]
@@ -90,11 +81,10 @@ modes:
 
   deep_sleep:
     input_power:
-      columns: ["Description", "Symbol", "Min", "Typ", "Max", "Unit", "Requirement Code"]
+      columns: ["Description", "Min", "Typ", "Max", "Unit", "Requirement Code"]
       rows:
         operating_input_voltage:
           description: "Operating Input Voltage"
-          symbol: "$V_{in}$"
           min: "$5.1$"
           typ: "$7.2$"
           max: "$10$"
@@ -102,7 +92,6 @@ modes:
           requirement_code: "**REQ_INP_009**{: #REQ_INP_009 }"
         input_current:
           description: "Input Current"
-          symbol: "$I_{in}$"
           min: "$-$"
           typ: "[TBD]"
           max: "[TBD]"
@@ -111,11 +100,10 @@ modes:
 
   active:
     input_power:
-      columns: ["Description", "Symbol", "Min", "Typ", "Max", "Unit", "Requirement Code"]
+      columns: ["Description", "Min", "Typ", "Max", "Unit", "Requirement Code"]
       rows:
         operating_input_voltage:
           description: "Operating Input Voltage"
-          symbol: "$V_{in}$"
           min: "$5.1$"
           typ: "$7.2$"
           max: "$10$"
@@ -123,7 +111,6 @@ modes:
           requirement_code: "**REQ_INP_011**{: #REQ_INP_011 }"
         input_current:
           description: "Input Current"
-          symbol: "$I_{in}$"
           min: "$-$"
           typ: "$-$"
           max: "$20$"
@@ -131,7 +118,6 @@ modes:
           requirement_code: "**REQ_INP_012**{: #REQ_INP_012 }"
         auto_standby_entering:
           description: "Auto Standby mode entering"
-          symbol: "$t_{th(Standby)}$"
           min: "$-$"
           typ: "$-$"
           max: "$105$"
@@ -140,11 +126,10 @@ modes:
 
   restricted:
     input_power:
-      columns: ["Description", "Symbol", "Min", "Typ", "Max", "Unit", "Requirement Code"]
+      columns: ["Description", "Min", "Typ", "Max", "Unit", "Requirement Code"]
       rows:
         operating_input_voltage:
           description: "Operating Input Voltage"
-          symbol: "$V_{in}$"
           min: "$5.1$"
           typ: "$7.2$"
           max: "$10$"
@@ -152,7 +137,6 @@ modes:
           requirement_code: "**REQ_INP_014**{: #REQ_INP_014 }"
         input_current:
           description: "Input Current"
-          symbol: "$I_{in}$"
           min: "$-$"
           typ: "$-$"
           max: "$15$"
@@ -160,7 +144,6 @@ modes:
           requirement_code: "**REQ_INP_015**{: #REQ_INP_015 }"
         auto_standby_entering:
           description: "Auto Standby mode entering"
-          symbol: "$t_{th(Standby)}$"
           min: "$-$"
           typ: "$-$"
           max: "$105$"
@@ -168,7 +151,6 @@ modes:
           requirement_code: "**REQ_INP_016**{: #REQ_INP_016 }"
         auto_active_entering:
           description: "Auto Active mode entering"
-          symbol: "$t_{th(Active)}$"
           min: "$-$"
           typ: "$-$"
           max: "$60$"
@@ -177,11 +159,10 @@ modes:
 
   fail_safe:
     input_power:
-      columns: ["Description", "Symbol", "Min", "Typ", "Max", "Unit", "Requirement Code"]
+      columns: ["Description", "Min", "Typ", "Max", "Unit", "Requirement Code"]
       rows:
         continuous_voltage_no_damage:
           description: "Continuous Input Voltage without damage"
-          symbol: "$V_{in}$"
           min: "$-30$"
           typ: "$-$"
           max: "$30$"
@@ -189,7 +170,6 @@ modes:
           requirement_code: "**REQ_INP_018**{: #REQ_INP_018 }"
         auto_fail_safe_entering:
           description: ["Auto Fail-Safe mode entering"]
-          symbol: ["$I_{th(FailSafe)}$", "$V_{th(FailSafe)}$"]
           min: ["$-$", "$5$"]
           typ: ["$-$", "$-$"]
           max: ["$25$", "$12$"]
