@@ -43,30 +43,30 @@ Input source of this device in standalone version is **2X High-Current Li-Ion 18
 
 ### 2.2 Power modes
 
-- **Standby**
+#### **Standby**
 
 {{ render_req_table('modes.standby.input_power') }}
 
 ---
 
-- **Deep Sleep**
+#### **Deep Sleep**
 
 {{ render_req_table('modes.deep_sleep.input_power') }}
 
 ---
 
-- **Active**
+#### **Active**
 
 {{ render_req_table('modes.active.input_power') }}
 
 ---
 
-- **Restricted**
+#### **Restricted**
 
 {{ render_req_table('modes.restricted.input_power') }}
 
 ---
 
-- **Fail-Safe**
+#### **Fail-Safe**
 
 {{ render_req_table('modes.fail_safe.input_power') }}

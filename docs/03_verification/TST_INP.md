@@ -4,7 +4,7 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 
 ---
 
-## {{ render_test_header('TST_INP_001', ['DUT', 'Programmable power supply', 'Oscilloscope']) }}
+## {{ render_test_header('TST_INP_001', ['DUT', 'Programmable power supply', 'Oscilloscope', 'SWD debugger']) }}
 
 ### Test setup
 
@@ -13,7 +13,7 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 
 ### Procedure
 
-1. Connect probe to logic section input voltage.
+1. Connect probe to logic section input voltage and connect debugger.
 2. Set power supply to typical voltage: {{ get_req_val('REQ_INP_001', 'typ') }} {{ get_req_val('REQ_INP_001', 'unit') }}.
 3. Check variables and voltage.
 4. Set power supply to min voltage: {{ get_req_val('REQ_INP_001', 'min') }} {{ get_req_val('REQ_INP_001', 'unit') }}.
@@ -23,7 +23,7 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 ### Result criteria
 
 !!! success "Pass"
-    {{ parameters.software.standby_mode_flag }} is **true** AND logic section input voltage is {{ parameters.physical.logic_section_input_voltage }} in all checks
+    {{ parameters.software.standby_mode_flag }} is **true** AND logic section input voltage is approximately {{ parameters.physical.logic_section_input_voltage }} in all checks
 
 !!! failure "Fail"
     {{ parameters.software.standby_mode_flag }} is **false** OR logic section input voltage is different then {{ parameters.physical.logic_section_input_voltage }} in any of the checks
@@ -39,8 +39,9 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 
 ### Procedure
 
-1. Set power supply to typical voltage: {{ get_req_val('REQ_INP_001', 'typ') }} {{ get_req_val('REQ_INP_001', 'unit') }}.
-2. Check variables and current.
+1. Connect debugger.
+2. Set power supply to typical voltage: {{ get_req_val('REQ_INP_001', 'typ') }} {{ get_req_val('REQ_INP_001', 'unit') }}.
+3. Check variables and current.
 
 ### Result criteria
 
@@ -61,7 +62,7 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 
 ### Procedure
 
-1. Connect probes directly to logic section input voltage.
+1. Connect probes to logic section input voltage and connect debugger.
 2. Set power supply between: {{ get_req_val('REQ_INP_006', 'min') }} {{ get_req_val('REQ_INP_006', 'unit') }} and {{ get_req_val('REQ_INP_003', 'min') }} {{ get_req_val('REQ_INP_003', 'unit') }}.
 3. Attempt entering **Active mode** via user interface.
 4. Check variables and voltage.
@@ -69,10 +70,10 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 ### Result criteria
 
 !!! success "Pass"
-    Variable {{ parameters.software.standby_mode_flag }} is set to **true** AND {{ parameters.software.active_mode_flag }} is set to **false** AND logic input section input voltage is approximately {{ parameters.physical.logic_section_input_voltage }}
+    {{ parameters.software.standby_mode_flag }} is set to **true** AND {{ parameters.software.active_mode_flag }} is set to **false** AND logic input section input voltage is approximately {{ parameters.physical.logic_section_input_voltage }}
 
 !!! failure "Fail"
-    Variable {{ parameters.software.standby_mode_flag }} is set to **false** OR {{ parameters.software.active_mode_flag }} is set to **true** OR logic input section input voltage is different then {{ parameters.physical.logic_section_input_voltage }}
+    {{ parameters.software.standby_mode_flag }} is set to **false** OR {{ parameters.software.active_mode_flag }} is set to **true** OR logic input section input voltage is different then {{ parameters.physical.logic_section_input_voltage }}
 
 ---
 
@@ -85,7 +86,7 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 
 ### Procedure
 
-1. Connect probes directly to logic section input voltage.
+1. Connect probes to logic section input voltage and connect debugger.
 2. Set power supply to: {{ get_req_val('REQ_INP_001', 'typ') }} {{ get_req_val('REQ_INP_001', 'unit') }}.
 3. Heat input section of the device between: {{ get_req_val('REQ_INP_004', 'max') }} {{ get_req_val('REQ_INP_004', 'unit') }} and {{ get_req_val('REQ_INP_013', 'max') }} {{ get_req_val('REQ_INP_013', 'unit') }}.
 4. Attempt entering **Active mode** via user interface.
@@ -94,10 +95,10 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 ### Result criteria
 
 !!! success "Pass"
-    Variables {{ parameters.software.standby_mode_flag }} is set to **true** AND {{ parameters.software.active_mode_flag }} is set to **false** AND logic section input voltage is approximately  {{ parameters.physical.logic_section_input_voltage }}
+    {{ parameters.software.standby_mode_flag }} is set to **true** AND {{ parameters.software.active_mode_flag }} is set to **false** AND logic section input voltage is approximately  {{ parameters.physical.logic_section_input_voltage }}
 
 !!! failure "Fail"
-    Variables {{ parameters.software.standby_mode_flag }} is set to **false** OR {{ parameters.software.active_mode_flag }} is set to **true** OR logic section input voltage is different then {{ parameters.physical.logic_section_input_voltage }}
+    {{ parameters.software.standby_mode_flag }} is set to **false** OR {{ parameters.software.active_mode_flag }} is set to **true** OR logic section input voltage is different then {{ parameters.physical.logic_section_input_voltage }}
 
 ---
 
@@ -110,7 +111,7 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 
 ### Procedure
 
-1. Connect probes directly to logic section input voltage.
+1. Connect probes to logic section input voltage and connect debugger.
 2. Set power supply to: {{ get_req_val('REQ_INP_001', 'typ') }} {{ get_req_val('REQ_INP_001', 'unit') }}.
 3. Heat input section of the device between: {{ get_req_val('REQ_INP_004', 'max') }} {{ get_req_val('REQ_INP_004', 'unit') }} and {{ get_req_val('REQ_INP_013', 'max') }} {{ get_req_val('REQ_INP_013', 'unit') }}.
 4. Attempt entering **Restricted mode** via user interface.
@@ -119,10 +120,10 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 ### Result criteria
 
 !!! success "Pass"
-    Variable {{ parameters.software.standby_mode_flag }} is set to **true** AND {{ parameters.software.restricted_mode_flag }} is set to **false** AND logic section input voltage is approximately {{ parameters.physical.logic_section_input_voltage }}
+    {{ parameters.software.standby_mode_flag }} is set to **true** AND {{ parameters.software.restricted_mode_flag }} is set to **false** AND logic section input voltage is approximately {{ parameters.physical.logic_section_input_voltage }}
 
 !!! failure "Fail"
-    Variable {{ parameters.software.standby_mode_flag }} is set to **false** OR {{ parameters.software.restricted_mode_flag }} is set to **true** OR logic section input voltage is different then {{ parameters.physical.logic_section_input_voltage }}
+    {{ parameters.software.standby_mode_flag }} is set to **false** OR {{ parameters.software.restricted_mode_flag }} is set to **true** OR logic section input voltage is different then {{ parameters.physical.logic_section_input_voltage }}
 
 ---
 
@@ -135,7 +136,7 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 
 ### Procedure
 
-1. Connect probes directly to logic section input voltage.
+1. Connect probes to logic section input voltage and connect debugger.
 2. Set power supply to: {{ get_req_val('REQ_INP_001', 'typ') }} {{ get_req_val('REQ_INP_001', 'unit') }}.
 3. Check variables and voltage.
 4. Set power supply between: {{ get_req_val('REQ_INP_009', 'min') }} {{ get_req_val('REQ_INP_006', 'unit') }} and {{ get_req_val('REQ_INP_006', 'min') }} {{ get_req_val('REQ_INP_006', 'unit') }}.
@@ -144,12 +145,12 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 ### Result criteria
 
 !!! success "Pass"
-    1. Variable {{ parameters.software.deep_sleep_mode_flag }} is set to **false** AND {{ parameters.software.standby_mode_flag }} is set to **true** AND logic section input voltage is approximately {{ parameters.physical.logic_section_input_voltage }} in first check
-    2. Variable {{ parameters.software.deep_sleep_mode_flag }} is set to **true** AND {{ parameters.software.standby_mode_flag }} is set to **false** AND logic section input voltage is approximately {{ parameters.physical.logic_section_input_voltage }} in second check
+    1. {{ parameters.software.deep_sleep_mode_flag }} is set to **false** AND {{ parameters.software.standby_mode_flag }} is set to **true** AND logic section input voltage is approximately {{ parameters.physical.logic_section_input_voltage }} in first check
+    2. {{ parameters.software.deep_sleep_mode_flag }} is set to **true** AND {{ parameters.software.standby_mode_flag }} is set to **false** AND logic section input voltage is approximately {{ parameters.physical.logic_section_input_voltage }} in second check
 
 !!! failure "Fail"
-    1. Variable {{ parameters.software.deep_sleep_mode_flag }} is set to **true** OR {{ parameters.software.standby_mode_flag }} is set to **false** OR logic section input voltage is different then {{ parameters.physical.logic_section_input_voltage }} in first check
-    2. Variable {{ parameters.software.deep_sleep_mode_flag }} is set to **false** OR {{ parameters.software.standby_mode_flag }} is set to **true** OR logic section input voltage is different then {{ parameters.physical.logic_section_input_voltage }} in second check
+    1. {{ parameters.software.deep_sleep_mode_flag }} is set to **true** OR {{ parameters.software.standby_mode_flag }} is set to **false** OR logic section input voltage is different then {{ parameters.physical.logic_section_input_voltage }} in first check
+    2. {{ parameters.software.deep_sleep_mode_flag }} is set to **false** OR {{ parameters.software.standby_mode_flag }} is set to **true** OR logic section input voltage is different then {{ parameters.physical.logic_section_input_voltage }} in second check
 
 ---
 
@@ -162,9 +163,9 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 
 ### Procedure
 
-1. Set power supply to: {{ get_req_val('REQ_INP_001', 'typ') }}.
-2. Set electronic load to: approximately $0.5~\text{m}\Omega$.
-3. Set output power of DUT to **40 W** via user interface.
+1. Set power supply to: {{ get_req_val('REQ_INP_001', 'typ') }} {{ get_req_val('REQ_INP_001', 'unit') }}.
+2. Set electronic load to: $0.5~\text{m}\Omega$.
+3. Set output power of DUT to $40~\text W$ via user interface.
 4. Set input impedance to less then: {{ get_req_val('REQ_INP_007', 'max') }} {{ get_req_val('REQ_INP_007', 'unit') }}.
 5. Attempt entering **Active mode** via user interface.
 6. Check variables.
@@ -201,7 +202,7 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 ### Procedure
 
 1. Set the power supply to {{ get_req_val('REQ_INP_001', 'typ') }} {{ get_req_val('REQ_INP_001', 'unit') }}.
-2. Set output power to **40 W** via user interface.
+2. Set output power to $40~\text W$ via user interface.
 3. Attempt entering **Active mode** via user interface.
 4. Check variables.
 5. Heat input section between: {{ get_req_val('REQ_INP_008', 'max') }} {{ get_req_val('REQ_INP_008', 'unit') }} and {{ get_req_val('REQ_INP_013', 'max') }} {{ get_req_val('REQ_INP_013', 'unit') }}.
@@ -313,7 +314,7 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 
 1. Connect voltage probes to logic level input voltage and connect debugger.
 2. Connect electronic load to output and set it to $0.2~\Omega$.
-3. Set output power to $90~\text W$ via user interface.
+3. Set output power to {{ parameters.physical.max_output_power }} via user interface.
 4. Set the power supply to {{ get_req_val('REQ_INP_011', 'typ') }} {{ get_req_val('REQ_INP_011', 'unit') }}.
 5. Check current and variables.
 
@@ -392,7 +393,7 @@ This document provides test procedures to verify requirements from ***REQ_INP_XX
 
 1. Connect voltage probes to logic level input voltage and connect debugger.
 2. Connect electronic load to output and set it to $0.2~\Omega$.
-3. Set output power to $90~\text W$ via user interface.
+3. Set output power to {{ parameters.physical.max_output_power }} via user interface.
 4. Set the power supply to {{ get_req_val('REQ_INP_014', 'typ') }} {{ get_req_val('REQ_INP_014', 'unit') }}.
 5. Check current and variables.
 
