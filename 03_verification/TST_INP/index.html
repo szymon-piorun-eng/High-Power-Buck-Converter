@@ -1,0 +1,4168 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://szymon-piorun-eng.github.io/High-Power-Buck-Converter/03_verification/TST_INP/">
+      
+      
+        <link rel="prev" href="../../01_requirements/SRS/">
+      
+      
+        <link rel="next" href="../../04_traceability/req_to_test/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Tests to verify input power requirements - High Power Buck Converter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tests-to-verify-input-power-requirements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="High Power Buck Converter" class="md-header__button md-logo" aria-label="High Power Buck Converter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            High Power Buck Converter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tests to verify input power requirements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/szymon-piorun-eng/High-Power-Buck-Converter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../00_vision/PRJ_VISION_01/" class="md-tabs__link">
+          
+  
+  
+  00 vision
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01_requirements/SRS/" class="md-tabs__link">
+          
+  
+  
+  01 requirements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  03 verification
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../04_traceability/req_to_test/" class="md-tabs__link">
+          
+  
+  
+  04 traceability
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="High Power Buck Converter" class="md-nav__button md-logo" aria-label="High Power Buck Converter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    High Power Buck Converter
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/szymon-piorun-eng/High-Power-Buck-Converter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 vision
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    00 vision
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_vision/PRJ_VISION_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_requirements/SRS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System requirements specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 verification
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 verification
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tests to verify input power requirements
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tests to verify input power requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_001-operating-input-voltage-in-standby-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_001: Operating input voltage in Standby mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_001: Operating input voltage in Standby mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_002-input-current-draw-in-standby-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_002: Input current draw in Standby mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_002: Input current draw in Standby mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_003-active-mode-lockout-in-case-of-low-input-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_003: Active mode lockout in case of low input voltage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_003: Active mode lockout in case of low input voltage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_004-active-mode-lockout-in-case-of-high-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_004: Active mode lockout in case of high temperature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_004: Active mode lockout in case of high temperature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_005-restricted-mode-lockout-in-case-of-high-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_005: Restricted mode lockout in case of high temperature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_005: Restricted mode lockout in case of high temperature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_006-deep-sleep-mode-activation-in-case-of-low-input-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_006: Deep Sleep mode activation in case of low input voltage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_006: Deep Sleep mode activation in case of low input voltage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_007-auto-restricted-mode-activation-in-case-of-high-source-impedance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_007: Auto Restricted mode activation in case of high source impedance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_007: Auto Restricted mode activation in case of high source impedance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_008-auto-restricted-mode-activation-in-case-of-high-temperature-in-input-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_008: Auto Restricted mode activation in case of high temperature in input section
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_008: Auto Restricted mode activation in case of high temperature in input section">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_009-operating-input-voltage-in-deep-sleep-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_009: Operating input voltage in Deep Sleep mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_009: Operating input voltage in Deep Sleep mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_010-input-current-in-deep-sleep-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_010: Input current in Deep Sleep mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_010: Input current in Deep Sleep mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_011-operating-input-voltage-in-active-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_011: Operating input voltage in Active mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_011: Operating input voltage in Active mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_012-max-input-current-in-active-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_012: Max input current in Active mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_012: Max input current in Active mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_013-auto-standby-mode-entering-from-active-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_013: Auto Standby mode entering from Active mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_013: Auto Standby mode entering from Active mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_014-operating-input-voltage-in-restricted-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_014: Operating input voltage in Restricted mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_014: Operating input voltage in Restricted mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_015-max-input-current-in-restricted-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_015: Max input current in Restricted mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_015: Max input current in Restricted mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_016-auto-standby-mode-entering-from-restricted-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_016: Auto Standby mode entering from Restricted mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_016: Auto Standby mode entering from Restricted mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_017-auto-active-mode-entering-from-restricted-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_017: Auto Active mode entering from Restricted mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_017: Auto Active mode entering from Restricted mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_018-fail-safe-input-continuous-voltage-without-damage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_018: Fail-Safe input continuous voltage without damage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_018: Fail-Safe input continuous voltage without damage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_019-auto-fail-safe-mode-entering-in-case-of-input-over-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_019: Auto Fail-Safe mode entering in case of input over-current
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_019: Auto Fail-Safe mode entering in case of input over-current">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_020-auto-fail-safe-mode-entering-in-case-of-over-or-under-input-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_020: Auto Fail-Safe mode entering in case of over or under input voltage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_020: Auto Fail-Safe mode entering in case of over or under input voltage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 traceability
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    04 traceability
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_traceability/req_to_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirement id to Test id traceability matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_001-operating-input-voltage-in-standby-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_001: Operating input voltage in Standby mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_001: Operating input voltage in Standby mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_002-input-current-draw-in-standby-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_002: Input current draw in Standby mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_002: Input current draw in Standby mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_003-active-mode-lockout-in-case-of-low-input-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_003: Active mode lockout in case of low input voltage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_003: Active mode lockout in case of low input voltage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_004-active-mode-lockout-in-case-of-high-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_004: Active mode lockout in case of high temperature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_004: Active mode lockout in case of high temperature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_005-restricted-mode-lockout-in-case-of-high-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_005: Restricted mode lockout in case of high temperature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_005: Restricted mode lockout in case of high temperature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_006-deep-sleep-mode-activation-in-case-of-low-input-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_006: Deep Sleep mode activation in case of low input voltage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_006: Deep Sleep mode activation in case of low input voltage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_007-auto-restricted-mode-activation-in-case-of-high-source-impedance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_007: Auto Restricted mode activation in case of high source impedance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_007: Auto Restricted mode activation in case of high source impedance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_008-auto-restricted-mode-activation-in-case-of-high-temperature-in-input-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_008: Auto Restricted mode activation in case of high temperature in input section
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_008: Auto Restricted mode activation in case of high temperature in input section">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_009-operating-input-voltage-in-deep-sleep-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_009: Operating input voltage in Deep Sleep mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_009: Operating input voltage in Deep Sleep mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_010-input-current-in-deep-sleep-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_010: Input current in Deep Sleep mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_010: Input current in Deep Sleep mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_011-operating-input-voltage-in-active-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_011: Operating input voltage in Active mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_011: Operating input voltage in Active mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_012-max-input-current-in-active-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_012: Max input current in Active mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_012: Max input current in Active mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_013-auto-standby-mode-entering-from-active-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_013: Auto Standby mode entering from Active mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_013: Auto Standby mode entering from Active mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_014-operating-input-voltage-in-restricted-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_014: Operating input voltage in Restricted mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_014: Operating input voltage in Restricted mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_015-max-input-current-in-restricted-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_015: Max input current in Restricted mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_015: Max input current in Restricted mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_016-auto-standby-mode-entering-from-restricted-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_016: Auto Standby mode entering from Restricted mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_016: Auto Standby mode entering from Restricted mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_017-auto-active-mode-entering-from-restricted-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_017: Auto Active mode entering from Restricted mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_017: Auto Active mode entering from Restricted mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_018-fail-safe-input-continuous-voltage-without-damage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_018: Fail-Safe input continuous voltage without damage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_018: Fail-Safe input continuous voltage without damage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_019-auto-fail-safe-mode-entering-in-case-of-input-over-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_019: Auto Fail-Safe mode entering in case of input over-current
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_019: Auto Fail-Safe mode entering in case of input over-current">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tst_inp_020-auto-fail-safe-mode-entering-in-case-of-over-or-under-input-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TST_INP_020: Auto Fail-Safe mode entering in case of over or under input voltage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TST_INP_020: Auto Fail-Safe mode entering in case of over or under input voltage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-equipment_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test equipment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-setup_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-criteria_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tests-to-verify-input-power-requirements">Tests to verify input power requirements</h1>
+<p>This document provides test procedures to verify requirements from <strong><em>REQ_INP_XXX</em></strong> group.</p>
+<hr />
+<h2 id="tst_inp_001-operating-input-voltage-in-standby-mode"><strong id="TST_INP_001">TST_INP_001</strong>: Operating input voltage in Standby mode</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_001">REQ_INP_001</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>Oscilloscope</li>
+<li>SWD debugger</li>
+</ul>
+<h3 id="test-setup">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Standby mode</strong>.</li>
+</ol>
+<h3 id="procedure">Procedure</h3>
+<ol>
+<li>Connect probe to logic section input voltage and connect debugger.</li>
+<li>Set power supply to typical voltage: <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check variables and voltage.</li>
+<li>Set power supply to min voltage: <span class="arithmatex">\(6.1\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check variables and voltage.</li>
+<li>Set power supply to max voltage: <span class="arithmatex">\(10\)</span> <span class="arithmatex">\(V\)</span>.</li>
+</ol>
+<h3 id="result-criteria">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<p><code>standby_mode_flag</code> is <strong>true</strong> AND logic section input voltage is approximately <span class="arithmatex">\(3.3~\text(V)\)</span> in all checks</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<p><code>standby_mode_flag</code> is <strong>false</strong> OR logic section input voltage is different then <span class="arithmatex">\(3.3~\text(V)\)</span> in any of the checks</p>
+</div>
+<hr />
+<h2 id="tst_inp_002-input-current-draw-in-standby-mode"><strong id="TST_INP_002">TST_INP_002</strong>: Input current draw in Standby mode</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_002">REQ_INP_002</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_1">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+</ul>
+<h3 id="test-setup_1">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Standby mode</strong>.</li>
+</ol>
+<h3 id="procedure_1">Procedure</h3>
+<ol>
+<li>Connect debugger.</li>
+<li>Set power supply to typical voltage: <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check variables and current.</li>
+</ol>
+<h3 id="result-criteria_1">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<p><code>standby_mode_flag</code> is <strong>true</strong> AND Input current &lt; [TBD] <span class="arithmatex">\(\mu A\)</span>.</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<p><code>standby_mode_flag</code> is <strong>false</strong> OR Input current &gt; [TBD] <span class="arithmatex">\(\mu A\)</span>.</p>
+</div>
+<hr />
+<h2 id="tst_inp_003-active-mode-lockout-in-case-of-low-input-voltage"><strong id="TST_INP_003">TST_INP_003</strong>: Active mode lockout in case of low input voltage</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_003">REQ_INP_003</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_2">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Oscilloscope</li>
+<li>SWD debugger</li>
+<li>Programmable power supply</li>
+</ul>
+<h3 id="test-setup_2">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Standby mode</strong>.</li>
+</ol>
+<h3 id="procedure_2">Procedure</h3>
+<ol>
+<li>Connect probes to logic section input voltage and connect debugger.</li>
+<li>Set power supply between: <span class="arithmatex">\(6.0\)</span> <span class="arithmatex">\(V\)</span> and <span class="arithmatex">\(6.4\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Attempt entering <strong>Active mode</strong> via user interface.</li>
+<li>Check variables and voltage.</li>
+</ol>
+<h3 id="result-criteria_2">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<p><code>standby_mode_flag</code> is set to <strong>true</strong> AND <code>active_mode_flag</code> is set to <strong>false</strong> AND logic input section input voltage is approximately <span class="arithmatex">\(3.3~\text(V)\)</span></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<p><code>standby_mode_flag</code> is set to <strong>false</strong> OR <code>active_mode_flag</code> is set to <strong>true</strong> OR logic input section input voltage is different then <span class="arithmatex">\(3.3~\text(V)\)</span></p>
+</div>
+<hr />
+<h2 id="tst_inp_004-active-mode-lockout-in-case-of-high-temperature"><strong id="TST_INP_004">TST_INP_004</strong>: Active mode lockout in case of high temperature</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_004">REQ_INP_004</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_3">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Oscilloscope</li>
+<li>Hot air station</li>
+<li>Thermal camera</li>
+<li>SWD debugger</li>
+<li>Programmable power supply</li>
+</ul>
+<h3 id="test-setup_3">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Standby mode</strong>.</li>
+</ol>
+<h3 id="procedure_3">Procedure</h3>
+<ol>
+<li>Connect probes to logic section input voltage and connect debugger.</li>
+<li>Set power supply to: <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Heat input section of the device between: <span class="arithmatex">\(95\)</span> <span class="arithmatex">\(^{\circ}C\)</span> and <span class="arithmatex">\(105\)</span> <span class="arithmatex">\(^{\circ}C\)</span>.</li>
+<li>Attempt entering <strong>Active mode</strong> via user interface.</li>
+<li>Check variables and voltage.</li>
+</ol>
+<h3 id="result-criteria_3">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<p><code>standby_mode_flag</code> is set to <strong>true</strong> AND <code>active_mode_flag</code> is set to <strong>false</strong> AND logic section input voltage is approximately  <span class="arithmatex">\(3.3~\text(V)\)</span></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<p><code>standby_mode_flag</code> is set to <strong>false</strong> OR <code>active_mode_flag</code> is set to <strong>true</strong> OR logic section input voltage is different then <span class="arithmatex">\(3.3~\text(V)\)</span></p>
+</div>
+<hr />
+<h2 id="tst_inp_005-restricted-mode-lockout-in-case-of-high-temperature"><strong id="TST_INP_005">TST_INP_005</strong>: Restricted mode lockout in case of high temperature</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_005">REQ_INP_005</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_4">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Oscilloscope</li>
+<li>Hot air station</li>
+<li>Thermal camera</li>
+<li>SWD debugger</li>
+<li>Programmable power supply</li>
+</ul>
+<h3 id="test-setup_4">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Standby mode</strong>.</li>
+</ol>
+<h3 id="procedure_4">Procedure</h3>
+<ol>
+<li>Connect probes to logic section input voltage and connect debugger.</li>
+<li>Set power supply to: <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Heat input section of the device between: <span class="arithmatex">\(95\)</span> <span class="arithmatex">\(^{\circ}C\)</span> and <span class="arithmatex">\(105\)</span> <span class="arithmatex">\(^{\circ}C\)</span>.</li>
+<li>Attempt entering <strong>Restricted mode</strong> via user interface.</li>
+<li>Check variables and voltage.</li>
+</ol>
+<h3 id="result-criteria_4">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<p><code>standby_mode_flag</code> is set to <strong>true</strong> AND <code>restricted_mode_flag</code> is set to <strong>false</strong> AND logic section input voltage is approximately <span class="arithmatex">\(3.3~\text(V)\)</span></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<p><code>standby_mode_flag</code> is set to <strong>false</strong> OR <code>restricted_mode_flag</code> is set to <strong>true</strong> OR logic section input voltage is different then <span class="arithmatex">\(3.3~\text(V)\)</span></p>
+</div>
+<hr />
+<h2 id="tst_inp_006-deep-sleep-mode-activation-in-case-of-low-input-voltage"><strong id="TST_INP_006">TST_INP_006</strong>: Deep Sleep mode activation in case of low input voltage</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_006">REQ_INP_006</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_5">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Oscilloscope</li>
+<li>SWD debugger</li>
+<li>Programmable power supply</li>
+</ul>
+<h3 id="test-setup_5">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Standby mode</strong>.</li>
+</ol>
+<h3 id="procedure_5">Procedure</h3>
+<ol>
+<li>Connect probes to logic section input voltage and connect debugger.</li>
+<li>Set power supply to: <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check variables and voltage.</li>
+<li>Set power supply between: <span class="arithmatex">\(5.1\)</span> <span class="arithmatex">\(V\)</span> and <span class="arithmatex">\(6.0\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check variables and voltage.</li>
+</ol>
+<h3 id="result-criteria_5">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<ol>
+<li><code>deep_sleep_mode_flag</code> is set to <strong>false</strong> AND <code>standby_mode_flag</code> is set to <strong>true</strong> AND logic section input voltage is approximately <span class="arithmatex">\(3.3~\text(V)\)</span> in first check</li>
+<li><code>deep_sleep_mode_flag</code> is set to <strong>true</strong> AND <code>standby_mode_flag</code> is set to <strong>false</strong> AND logic section input voltage is approximately <span class="arithmatex">\(3.3~\text(V)\)</span> in second check</li>
+</ol>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<ol>
+<li><code>deep_sleep_mode_flag</code> is set to <strong>true</strong> OR <code>standby_mode_flag</code> is set to <strong>false</strong> OR logic section input voltage is different then <span class="arithmatex">\(3.3~\text(V)\)</span> in first check</li>
+<li><code>deep_sleep_mode_flag</code> is set to <strong>false</strong> OR <code>standby_mode_flag</code> is set to <strong>true</strong> OR logic section input voltage is different then <span class="arithmatex">\(3.3~\text(V)\)</span> in second check</li>
+</ol>
+</div>
+<hr />
+<h2 id="tst_inp_007-auto-restricted-mode-activation-in-case-of-high-source-impedance"><strong id="TST_INP_007">TST_INP_007</strong>: Auto Restricted mode activation in case of high source impedance</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_007">REQ_INP_007</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_6">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>Electronic load</li>
+<li>SWD debugger</li>
+</ul>
+<h3 id="test-setup_6">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Standby mode</strong>.</li>
+</ol>
+<h3 id="procedure_6">Procedure</h3>
+<ol>
+<li>Set power supply to: <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Set electronic load to: <span class="arithmatex">\(0.5~\text{m}\Omega\)</span>.</li>
+<li>Set output power of DUT to <span class="arithmatex">\(40~\text W\)</span> via user interface.</li>
+<li>Set input impedance to less then: <span class="arithmatex">\(70\)</span> <span class="arithmatex">\(m \Omega\)</span>.</li>
+<li>Attempt entering <strong>Active mode</strong> via user interface.</li>
+<li>Check variables.</li>
+<li>Set input impedance to more then: <span class="arithmatex">\(70\)</span> <span class="arithmatex">\(m \Omega\)</span>.</li>
+<li>Check variables.</li>
+<li>Enter <strong>Standby mode</strong> via user interface.</li>
+<li>Check variables.</li>
+<li>Attempt entering <strong>Active mode</strong> via user interface.</li>
+<li>Check variables.</li>
+</ol>
+<h3 id="result-criteria_6">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<ol>
+<li>Variable <code>active_mode_flag</code> is set to <strong>true</strong> AND <code>standby_mode_flag</code> is set to <strong>false</strong> AND <code>restricted_mode_flag</code> is set to <strong>false</strong> in first check</li>
+<li>Variable <code>active_mode_flag</code> is set to <strong>false</strong> AND <code>standby_mode_flag</code> is set to <strong>false</strong> AND <code>restricted_mode_flag</code> is set to <strong>true</strong> in second check</li>
+<li>Variable <code>active_mode_flag</code> is set to <strong>false</strong> AND <code>standby_mode_flag</code> is set to <strong>true</strong> AND <code>restricted_mode_flag</code> is set to <strong>false</strong> in third check</li>
+<li>Variable <code>active_mode_flag</code> is set to <strong>false</strong> AND <code>standby_mode_flag</code> is set to <strong>false</strong> AND <code>restricted_mode_flag</code> is set to <strong>true</strong> in fourth check</li>
+</ol>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<ol>
+<li>Variable <code>active_mode_flag</code> is set to <strong>false</strong> OR <code>standby_mode_flag</code> is set to <strong>true</strong> OR <code>restricted_mode_flag</code> is set to <strong>true</strong> in first check</li>
+<li>Variable <code>active_mode_flag</code> is set to <strong>true</strong> OR <code>standby_mode_flag</code> is set to <strong>true</strong> OR <code>restricted_mode_flag</code> is set to <strong>false</strong> in second check</li>
+<li>Variable <code>active_mode_flag</code> is set to <strong>true</strong> OR <code>standby_mode_flag</code> is set to <strong>false</strong> OR <code>restricted_mode_flag</code> is set to <strong>true</strong> in third check</li>
+<li>Variable <code>active_mode_flag</code> is set to <strong>true</strong> OR <code>standby_mode_flag</code> is set to <strong>true</strong> OR <code>restricted_mode_flag</code> is set to <strong>false</strong> in fourth check</li>
+</ol>
+</div>
+<hr />
+<h2 id="tst_inp_008-auto-restricted-mode-activation-in-case-of-high-temperature-in-input-section"><strong id="TST_INP_008">TST_INP_008</strong>: Auto Restricted mode activation in case of high temperature in input section</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_008">REQ_INP_008</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_7">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>Hot air station</li>
+<li>Thermal camera</li>
+<li>SWD debugger</li>
+</ul>
+<h3 id="test-setup_7">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Standby mode</strong>.</li>
+</ol>
+<h3 id="procedure_7">Procedure</h3>
+<ol>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Set output power to <span class="arithmatex">\(40~\text W\)</span> via user interface.</li>
+<li>Attempt entering <strong>Active mode</strong> via user interface.</li>
+<li>Check variables.</li>
+<li>Heat input section between: <span class="arithmatex">\(70\)</span> <span class="arithmatex">\(^{\circ}C\)</span> and <span class="arithmatex">\(105\)</span> <span class="arithmatex">\(^{\circ}C\)</span>.</li>
+<li>Check variables.</li>
+<li>Enter <strong>Standby mode</strong> via user interface.</li>
+<li>Make sure input section temperature is between: <span class="arithmatex">\(70\)</span> <span class="arithmatex">\(^{\circ}C\)</span> and <span class="arithmatex">\(105\)</span> <span class="arithmatex">\(^{\circ}C\)</span>.</li>
+<li>Attempt entering <strong>Active mode</strong> via user interface.</li>
+<li>Check variables.</li>
+</ol>
+<h3 id="result-criteria_7">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<ol>
+<li>Variable <code>active_mode_flag</code> is set to <strong>true</strong> AND <code>standby_mode_flag</code> is set to <strong>false</strong> AND <code>restricted_mode_flag</code> is set to <strong>false</strong> in first check</li>
+<li>Variable <code>active_mode_flag</code> is set to <strong>false</strong> AND <code>standby_mode_flag</code> is set to <strong>false</strong> AND <code>restricted_mode_flag</code> is set to <strong>true</strong> in second check</li>
+<li>Variable <code>active_mode_flag</code> is set to <strong>false</strong> AND <code>standby_mode_flag</code> is set to <strong>true</strong> AND <code>restricted_mode_flag</code> is set to <strong>false</strong> in third check</li>
+</ol>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<ol>
+<li>Variable <code>active_mode_flag</code> is set to <strong>false</strong> OR <code>standby_mode_flag</code> is set to <strong>true</strong> OR <code>restricted_mode_flag</code> is set to <strong>true</strong> in first check</li>
+<li>Variable <code>active_mode_flag</code> is set to <strong>true</strong> OR <code>standby_mode_flag</code> is set to <strong>true</strong> OR <code>restricted_mode_flag</code> is set to <strong>false</strong> in second check</li>
+<li>Variable <code>active_mode_flag</code> is set to <strong>true</strong> OR <code>standby_mode_flag</code> is set to <strong>false</strong> OR <code>restricted_mode_flag</code> is set to <strong>true</strong> in third check</li>
+</ol>
+</div>
+<hr />
+<h2 id="tst_inp_009-operating-input-voltage-in-deep-sleep-mode"><strong id="TST_INP_009">TST_INP_009</strong>: Operating input voltage in Deep Sleep mode</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_009">REQ_INP_009</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_8">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+<li>Oscilloscope</li>
+</ul>
+<h3 id="test-setup_8">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Deep Sleep mode</strong>.</li>
+</ol>
+<h3 id="procedure_8">Procedure</h3>
+<ol>
+<li>Connect voltage probes to logic level input voltage and connect debugger.</li>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check voltage and variables.</li>
+<li>Set the power supply to <span class="arithmatex">\(5.1\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check voltage and variables.</li>
+<li>Set the power supply to <span class="arithmatex">\(10\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check voltage and variables.</li>
+</ol>
+<h3 id="result-criteria_8">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<p><code>deep_sleep_mode_flag</code> is <strong>true</strong> AND logic section input voltage is approximately <span class="arithmatex">\(3.3~\text(V)\)</span> in all checks</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<p><code>deep_sleep_mode_flag</code> is <strong>false</strong> OR logic section input voltage is different then <span class="arithmatex">\(3.3~\text(V)\)</span> in any of the checks</p>
+</div>
+<hr />
+<h2 id="tst_inp_010-input-current-in-deep-sleep-mode"><strong id="TST_INP_010">TST_INP_010</strong>: Input current in Deep Sleep mode</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_010">REQ_INP_010</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_9">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+</ul>
+<h3 id="test-setup_9">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Deep Sleep mode</strong>.</li>
+</ol>
+<h3 id="procedure_9">Procedure</h3>
+<ol>
+<li>Connect debugger.</li>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check current and variables.</li>
+</ol>
+<h3 id="result-criteria_9">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<p><code>deep_sleep_mode_flag</code> is <strong>true</strong> AND input current is less then [TBD]</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<p><code>deep_sleep_mode_flag</code> is <strong>false</strong> OR input current is more then [TBD]</p>
+</div>
+<hr />
+<h2 id="tst_inp_011-operating-input-voltage-in-active-mode"><strong id="TST_INP_011">TST_INP_011</strong>: Operating input voltage in Active mode</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_011">REQ_INP_011</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_10">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+<li>Oscilloscope</li>
+</ul>
+<h3 id="test-setup_10">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Active mode</strong>.</li>
+</ol>
+<h3 id="procedure_10">Procedure</h3>
+<ol>
+<li>Connect voltage probes to logic level input voltage and connect debugger.</li>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check voltage and variables.</li>
+<li>Set the power supply to <span class="arithmatex">\(5.1\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check voltage and variables.</li>
+<li>Set the power supply to <span class="arithmatex">\(10\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check voltage and variables.</li>
+</ol>
+<h3 id="result-criteria_10">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<p><code>active_mode_flag</code> is <strong>true</strong> AND logic section input voltage is approximately <span class="arithmatex">\(3.3~\text(V)\)</span> in all checks</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<p><code>active_mode_flag</code> is <strong>false</strong> OR logic section input voltage is different then <span class="arithmatex">\(3.3~\text(V)\)</span> in any of the checks</p>
+</div>
+<hr />
+<h2 id="tst_inp_012-max-input-current-in-active-mode"><strong id="TST_INP_012">TST_INP_012</strong>: Max input current in Active mode</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_012">REQ_INP_012</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_11">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+<li>Electronic load</li>
+</ul>
+<h3 id="test-setup_11">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Active mode</strong>.</li>
+</ol>
+<h3 id="procedure_11">Procedure</h3>
+<ol>
+<li>Connect voltage probes to logic level input voltage and connect debugger.</li>
+<li>Connect electronic load to output and set it to <span class="arithmatex">\(0.2~\Omega\)</span>.</li>
+<li>Set output power to <span class="arithmatex">\(90~\text W\)</span> via user interface.</li>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check current and variables.</li>
+</ol>
+<h3 id="result-criteria_11">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<p><code>active_mode_flag</code> is <strong>true</strong> AND input current is less then <span class="arithmatex">\(20\)</span> <span class="arithmatex">\(A\)</span></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<p><code>active_mode_flag</code> is <strong>false</strong> OR input current is more then <span class="arithmatex">\(20\)</span> <span class="arithmatex">\(A\)</span></p>
+</div>
+<hr />
+<h2 id="tst_inp_013-auto-standby-mode-entering-from-active-mode"><strong id="TST_INP_013">TST_INP_013</strong>: Auto Standby mode entering from Active mode</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_013">REQ_INP_013</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_12">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+<li>Hot air station</li>
+<li>Thermal camera</li>
+</ul>
+<h3 id="test-setup_12">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Active mode</strong>.</li>
+</ol>
+<h3 id="procedure_12">Procedure</h3>
+<ol>
+<li>Connect debugger.</li>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check variables.</li>
+<li>Heat input section of the device to more then <span class="arithmatex">\(105\)</span> <span class="arithmatex">\(^{\circ}C\)</span>.</li>
+<li>Check variables.</li>
+</ol>
+<h3 id="result-criteria_12">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<ol>
+<li><code>active_mode_flag</code> is <strong>true</strong> AND <code>standby_mode_flag</code> is <strong>false</strong> in the first check</li>
+<li><code>active_mode_flag</code> is <strong>false</strong> AND <code>standby_mode_flag</code> is <strong>true</strong> in the second check</li>
+</ol>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<ol>
+<li><code>active_mode_flag</code> is <strong>false</strong> OR <code>standby_mode_flag</code> is <strong>true</strong> in the first check</li>
+<li><code>active_mode_flag</code> is <strong>true</strong> OR <code>standby_mode_flag</code> is <strong>false</strong> in the second check</li>
+</ol>
+</div>
+<hr />
+<h2 id="tst_inp_014-operating-input-voltage-in-restricted-mode"><strong id="TST_INP_014">TST_INP_014</strong>: Operating input voltage in Restricted mode</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_014">REQ_INP_014</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_13">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+<li>Oscilloscope</li>
+</ul>
+<h3 id="test-setup_13">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Restricted mode</strong>.</li>
+</ol>
+<h3 id="procedure_13">Procedure</h3>
+<ol>
+<li>Connect voltage probes to logic level input voltage and connect debugger.</li>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check voltage and variables.</li>
+<li>Set the power supply to <span class="arithmatex">\(5.1\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check voltage and variables.</li>
+<li>Set the power supply to <span class="arithmatex">\(10\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check voltage and variables.</li>
+</ol>
+<h3 id="result-criteria_13">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<p><code>restricted_mode_flag</code> is <strong>true</strong> AND logic section input voltage is approximately <span class="arithmatex">\(3.3~\text(V)\)</span> in all checks</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<p><code>restricted_mode_flag</code> is <strong>false</strong> OR logic section input voltage is different then <span class="arithmatex">\(3.3~\text(V)\)</span> in any of the checks</p>
+</div>
+<hr />
+<h2 id="tst_inp_015-max-input-current-in-restricted-mode"><strong id="TST_INP_015">TST_INP_015</strong>: Max input current in Restricted mode</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_015">REQ_INP_015</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_14">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+<li>Electronic load</li>
+</ul>
+<h3 id="test-setup_14">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Restricted mode</strong>.</li>
+</ol>
+<h3 id="procedure_14">Procedure</h3>
+<ol>
+<li>Connect voltage probes to logic level input voltage and connect debugger.</li>
+<li>Connect electronic load to output and set it to <span class="arithmatex">\(0.2~\Omega\)</span>.</li>
+<li>Set output power to <span class="arithmatex">\(90~\text W\)</span> via user interface.</li>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check current and variables.</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<p><code>restricted_mode_flag</code> is <strong>true</strong> AND input current is less then <span class="arithmatex">\(15\)</span> <span class="arithmatex">\(A\)</span></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<p><code>restricted_mode_flag</code> is <strong>false</strong> OR input current is more then <span class="arithmatex">\(15\)</span> <span class="arithmatex">\(A\)</span></p>
+</div>
+<hr />
+<h2 id="tst_inp_016-auto-standby-mode-entering-from-restricted-mode"><strong id="TST_INP_016">TST_INP_016</strong>: Auto Standby mode entering from Restricted mode</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_016">REQ_INP_016</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_15">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+<li>Hot air station</li>
+<li>Thermal camera</li>
+</ul>
+<h3 id="test-setup_15">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Restricted mode</strong>.</li>
+</ol>
+<h3 id="procedure_15">Procedure</h3>
+<ol>
+<li>Connect debugger.</li>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check variables.</li>
+<li>Heat input section of the device to more then <span class="arithmatex">\(105\)</span> <span class="arithmatex">\(^{\circ}C\)</span>.</li>
+<li>Check variables.</li>
+</ol>
+<h3 id="result-criteria_14">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<ol>
+<li><code>restricted_mode_flag</code> is <strong>true</strong> AND <code>standby_mode_flag</code> is <strong>false</strong> in the first check</li>
+<li><code>restricted_mode_flag</code> is <strong>false</strong> AND <code>standby_mode_flag</code> is <strong>true</strong> in the second check</li>
+</ol>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<ol>
+<li><code>restricted_mode_flag</code> is <strong>false</strong> OR <code>standby_mode_flag</code> is <strong>true</strong> in the first check</li>
+<li><code>restricted_mode_flag</code> is <strong>true</strong> OR <code>standby_mode_flag</code> is <strong>false</strong> in the second check</li>
+</ol>
+</div>
+<hr />
+<h2 id="tst_inp_017-auto-active-mode-entering-from-restricted-mode"><strong id="TST_INP_017">TST_INP_017</strong>: Auto Active mode entering from Restricted mode</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_017">REQ_INP_017</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_16">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+<li>Hot air station</li>
+<li>Thermal camera</li>
+</ul>
+<h3 id="test-setup_16">Test setup</h3>
+<ol>
+<li>Make sure equipment is at room temperature.</li>
+<li>Make sure input section of DUT has more then <span class="arithmatex">\(60\)</span> <span class="arithmatex">\(^{\circ}C\)</span>.</li>
+<li>Configure DUT to enter <strong>Restricted mode</strong>.</li>
+</ol>
+<h3 id="procedure_16">Procedure</h3>
+<ol>
+<li>Connect debugger.</li>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check variables.</li>
+<li>Cool input section of the device to less then <span class="arithmatex">\(60\)</span> <span class="arithmatex">\(^{\circ}C\)</span>.</li>
+<li>Check variables.</li>
+</ol>
+<h3 id="result-criteria_15">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<ol>
+<li><code>restricted_mode_flag</code> is <strong>true</strong> AND <code>active_mode_flag</code> is <strong>false</strong> in the first check</li>
+<li><code>restricted_mode_flag</code> is <strong>false</strong> AND <code>active_mode_flag</code> is <strong>true</strong> in the second check</li>
+</ol>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<ol>
+<li><code>restricted_mode_flag</code> is <strong>false</strong> OR <code>active_mode_flag</code> is <strong>true</strong> in the first check</li>
+<li><code>restricted_mode_flag</code> is <strong>true</strong> OR <code>active_mode_flag</code> is <strong>false</strong> in the second check</li>
+</ol>
+</div>
+<hr />
+<h2 id="tst_inp_018-fail-safe-input-continuous-voltage-without-damage"><strong id="TST_INP_018">TST_INP_018</strong>: Fail-Safe input continuous voltage without damage</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_018">REQ_INP_018</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_17">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+<li>Oscilloscope</li>
+</ul>
+<h3 id="test-setup_17">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+</ol>
+<h3 id="procedure_17">Procedure</h3>
+<ol>
+<li>Connect voltage probes to logic level input voltage and connect debugger.</li>
+<li>Set the power supply to <span class="arithmatex">\(-30\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check input current.</li>
+<li>Set the power supply to <span class="arithmatex">\(30\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check input current.</li>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check voltage and variables.</li>
+</ol>
+<h3 id="result-criteria_16">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<ol>
+<li>Input current is below <span class="arithmatex">\(1~\text mA\)</span> in first AND second check</li>
+<li><code>standby_mode_flag</code> is <strong>true</strong> AND logic section input voltage is approximately <span class="arithmatex">\(3.3~\text(V)\)</span> in third check</li>
+</ol>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<ol>
+<li>Input current is more then <span class="arithmatex">\(1~\text mA\)</span> in first OR second check</li>
+<li><code>standby_mode_flag</code> is <strong>false</strong> OR logic section input voltage is approximately <span class="arithmatex">\(3.3~\text(V)\)</span> in third check</li>
+</ol>
+</div>
+<hr />
+<h2 id="tst_inp_019-auto-fail-safe-mode-entering-in-case-of-input-over-current"><strong id="TST_INP_019">TST_INP_019</strong>: Auto Fail-Safe mode entering in case of input over-current</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_019">REQ_INP_019</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_18">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+<li>Electronic load</li>
+</ul>
+<h3 id="test-setup_18">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Standby mode</strong>.</li>
+</ol>
+<h3 id="procedure_18">Procedure</h3>
+<ol>
+<li>Connect debugger.</li>
+<li>Connect electronic load to output of the input section and set it to less then <span class="arithmatex">\(25\)</span> <span class="arithmatex">\(A\)</span>.</li>
+<li>Set the power supply to <span class="arithmatex">\(7.2\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check variables.</li>
+<li>Set electronic load to more then <span class="arithmatex">\(25\)</span> <span class="arithmatex">\(A\)</span>.</li>
+<li>Check input current.</li>
+<li>Set the electronic load to less then <span class="arithmatex">\(25\)</span> <span class="arithmatex">\(A\)</span>.</li>
+<li>Check variables.</li>
+</ol>
+<h3 id="result-criteria_17">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<ol>
+<li><code>standby_mode_flag</code> is <strong>true</strong> in first check</li>
+<li>Input current is below <span class="arithmatex">\(1~\text mA\)</span>  in second check</li>
+<li><code>standby_mode_flag</code> is <strong>true</strong> in third check</li>
+</ol>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<ol>
+<li><code>standby_mode_flag</code> is <strong>false</strong> in first check</li>
+<li>Input current is more then <span class="arithmatex">\(1~\text mA\)</span>  in second check</li>
+<li><code>standby_mode_flag</code> is <strong>false</strong> in third check</li>
+</ol>
+</div>
+<hr />
+<h2 id="tst_inp_020-auto-fail-safe-mode-entering-in-case-of-over-or-under-input-voltage"><strong id="TST_INP_020">TST_INP_020</strong>: Auto Fail-Safe mode entering in case of over or under input voltage</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><strong>Traceability</strong>: <a href="../../01_requirements/SRS/#REQ_INP_020">REQ_INP_020</a></li>
+<li><strong>Type</strong>: Laboratory</li>
+<li><strong>Status</strong>: <span style="color:orange; font-weight: bold;">Draft</span></li>
+</ul>
+</div>
+<h3 id="test-equipment_19">Test equipment</h3>
+<ul>
+<li>DUT</li>
+<li>Programmable power supply</li>
+<li>SWD debugger</li>
+</ul>
+<h3 id="test-setup_19">Test setup</h3>
+<ol>
+<li>Make sure DUT and equipment are at room temperature.</li>
+<li>Configure DUT to enter <strong>Standby mode</strong>.</li>
+</ol>
+<h3 id="procedure_19">Procedure</h3>
+<ol>
+<li>Connect debugger.</li>
+<li>Set the power supply to less then <span class="arithmatex">\(5\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check input current.</li>
+<li>Set the power supply to more then <span class="arithmatex">\(12\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check input current.</li>
+<li>Set the power supply to <span class="arithmatex">\(10\)</span> <span class="arithmatex">\(V\)</span>.</li>
+<li>Check variables.</li>
+</ol>
+<h3 id="result-criteria_18">Result criteria</h3>
+<div class="admonition success">
+<p class="admonition-title">Pass</p>
+<ol>
+<li>Input current is below <span class="arithmatex">\(1~\text mA\)</span>  in first AND second check</li>
+<li><code>standby_mode_flag</code> is <strong>true</strong> in third check</li>
+</ol>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Fail</p>
+<ol>
+<li>Input current is more then <span class="arithmatex">\(1~\text mA\)</span>  in first OR second check</li>
+<li><code>standby_mode_flag</code> is <strong>false</strong> in third check</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "content.code.copy", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
