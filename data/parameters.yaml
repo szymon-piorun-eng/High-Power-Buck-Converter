@@ -1,0 +1,9 @@
+parameters:
+  physical:
+    logic_section_input_voltage: "$3.3~\\text(V)$"
+    max_output_power: "$90~\\text W$"
+  software:
+    standby_mode_flag: "`standby_mode_flag`"
+    active_mode_flag: "`active_mode_flag`"
+    restricted_mode_flag: "`restricted_mode_flag`"
+    deep_sleep_mode_flag: "`deep_sleep_mode_flag`"

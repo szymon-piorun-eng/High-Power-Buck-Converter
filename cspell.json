@@ -19,7 +19,8 @@
     "TCR",
     "Validation",
     "VTC",
-    "Wait"
+    "Wait",
+    "multimeters"
   ],
   "ignorePaths": [
     ".github/**",
