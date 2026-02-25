@@ -8,3 +8,4 @@ VTC
 PDN
 Deep Sleep
 Fail-Safe
+Murata
