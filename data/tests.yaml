@@ -149,3 +149,10 @@ TST_INP_020:
   metadata:
     type: "Laboratory"
     status: "Draft"
+
+TST_OUT_001:
+  id: "**TST_OUT_001**{: #TST_OUT_001 }"
+  title: "Output voltage in Standby mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
