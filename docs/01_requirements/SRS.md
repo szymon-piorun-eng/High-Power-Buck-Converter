@@ -70,3 +70,34 @@ Input source of this device in standalone version is **2X High-Current Li-Ion 18
 #### **Fail-Safe**
 
 {{ render_req_table('modes.fail_safe.input_power') }}
+
+## 3. Output power & dynamic load requirements
+
+### 3.1 Power modes
+
+#### Standby
+
+{{ render_req_table('modes.standby.output_power') }}
+
+!!!note
+    [1] The device measures resistance on the output connector. It uses a relatively high threshold to account for external cable resistance, preventing excessive power dissipation during a short circuit at the load.
+
+#### Deep Sleep
+
+{{ render_req_table('modes.deep_sleep.output_power') }}
+
+#### Active
+
+{{ render_req_table('modes.active.output_power') }}
+
+#### Restricted
+
+{{ render_req_table('modes.restricted.output_power') }}
+
+#### Fail-Safe
+
+{{ render_req_table('modes.fail_safe.output_power') }}
+
+### 3.2 General output characteristics
+
+{{ render_req_table('extras.tables.general_output_characteristics') }}

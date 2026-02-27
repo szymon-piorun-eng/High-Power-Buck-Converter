@@ -25,6 +25,37 @@ extras:
           typ: "$15$"
           max: "$20$"
           unit: "$m \\Omega$"
+    general_output_characteristics:
+      columns: ["Description", "Min", "Typ", "Max", "Unit", "Requirement Code"]
+      rows:
+        volt_ripple_p_p:
+          description: "Volt ripple peak to peak"
+          min: "[TBD]"
+          typ: "[TBD]"
+          max: "[TBD]"
+          unit: "$V$"
+          requirement_code: "**REQ_OUT_018**{: #REQ_OUT_018 }"
+        current_ripple_p_p:
+          description: "Current ripple peak to peak"
+          min: "[TBD]"
+          typ: "[TBD]"
+          max: "[TBD]"
+          unit: "$A$"
+          requirement_code: "**REQ_OUT_019**{: #REQ_OUT_019 }"
+        efficiency:
+          description: "Efficiency"
+          min: "[TBD]"
+          typ: "[TBD]"
+          max: "[TBD]"
+          unit: "$\\text %$"
+          requirement_code: "**REQ_OUT_020**{: #REQ_OUT_020 }"
+        transient_response_time:
+          description: "Transient response time"
+          min: "[TBD]"
+          typ: "[TBD]"
+          max: "[TBD]"
+          unit: "$ms$"
+          requirement_code: "**REQ_OUT_021**{: #REQ_OUT_021 }"
 
 modes:
   standby:
@@ -38,7 +69,6 @@ modes:
           max: "$10$"
           unit: "$V$"
           requirement_code: "**REQ_INP_001**{: #REQ_INP_001 }"
-        
         input_current_draw:
           description: "Input Current Draw"
           min: "$-$"
@@ -46,7 +76,6 @@ modes:
           max: "[TBD]"
           unit: "$\\mu A$"
           requirement_code: "**REQ_INP_002**{: #REQ_INP_002 }"
-
         active_mode_lockout:
           description: ["Active Mode lockout"]
           min: ["$6.4$", "$-$"]
@@ -54,7 +83,6 @@ modes:
           max: ["$-$", "$95$"]
           unit: ["$V$", "$^{\\circ}C$"]
           requirement_code: ["**REQ_INP_003**{: #REQ_INP_003 }", "**REQ_INP_004**{: #REQ_INP_004 }"]
-
         restricted_mode_lockout:
           description: "Restricted mode lockout"
           min: "$-$"
@@ -62,7 +90,6 @@ modes:
           max: "$95$"
           unit: "$^{\\circ}C$"
           requirement_code: "**REQ_INP_005**{: #REQ_INP_005 }"
-
         auto_deep_sleep_activation:
           description: "Auto Deep Sleep mode activation"
           min: "$6.0$"
@@ -70,7 +97,6 @@ modes:
           max: "$-$"
           unit: "$V$"
           requirement_code: "**REQ_INP_006**{: #REQ_INP_006 }"
-
         auto_restricted_mode_activation:
           description: ["Auto Restricted mode activation in case of low quality source detection or over-temperature detection"]
           min: ["$-$", "$-$"]
@@ -78,6 +104,30 @@ modes:
           max: ["$70$", "$70$"]
           unit: ["$m \\Omega$", "$^{\\circ}C$"]
           requirement_code: ["**REQ_INP_007**{: #REQ_INP_007 }", "**REQ_INP_008**{: #REQ_INP_008 }"]
+    output_power:
+      columns: ["Description", "Min", "Typ", "Max", "Unit", "Requirement Code"]
+      rows:
+        output_voltage:
+          description: "Output Voltage"
+          min: "$-$"
+          typ: "$-$"
+          max: "$0$"
+          unit: "$V$"
+          requirement_code: "**REQ_OUT_001**{: #REQ_OUT_001 }"
+        active_rest_lockout:
+          description: ["Active/Restricted mode Lockout"]
+          min: ["$0.02^{[1]}$", "$-$"]
+          typ: ["$-$", "$-$"]
+          max: ["$-$", "$115$"]
+          unit: ["$\\Omega$", "$^{\\circ}C$"]
+          requirement_code: ["**REQ_OUT_002**{: #REQ_OUT_002 }", "**REQ_OUT_003**{: #REQ_OUT_003 }"]
+        auto_rest_entering:
+          description: "Auto Restricted mode entering"
+          min: "$-$"
+          typ: "$-$"
+          max: "$100$"
+          unit: "$^{\\circ}C$"
+          requirement_code: "**REQ_OUT_004**{: #REQ_OUT_004 }"
 
   deep_sleep:
     input_power:
@@ -97,6 +147,16 @@ modes:
           max: "[TBD]"
           unit: "$\\mu A$"
           requirement_code: "**REQ_INP_010**{: #REQ_INP_010 }"
+    output_power:
+      columns: ["Description", "Min", "Typ", "Max", "Unit", "Requirement Code"]
+      rows:
+        output_voltage:
+          description: "Output Voltage"
+          min: "$-$"
+          typ: "$-$"
+          max: "$0$"
+          unit: "$V$"
+          requirement_code: "**REQ_OUT_005**{: #REQ_OUT_005 }"
 
   active:
     input_power:
@@ -123,6 +183,44 @@ modes:
           max: "$105$"
           unit: "$^{\\circ}C$"
           requirement_code: "**REQ_INP_013**{: #REQ_INP_013 }"
+    output_power:
+      columns: ["Description", "Min", "Typ", "Max", "Unit", "Requirement Code"]
+      rows:
+        output_voltage:
+          description: "Output Voltage"
+          min: "$-$"
+          typ: "$-$"
+          max: "$5$"
+          unit: "$V$"
+          requirement_code: "**REQ_OUT_006**{: #REQ_OUT_006 }"
+        output_current:
+          description: "Output Current"
+          min: "$-$"
+          typ: "$-$"
+          max: "$30$"
+          unit: "$A$"
+          requirement_code: "**REQ_OUT_007**{: #REQ_OUT_007 }"
+        output_power:
+          description: "Output Power"
+          min: "$-$"
+          typ: "$-$"
+          max: "$90$"
+          unit: "$W$"
+          requirement_code: "**REQ_OUT_008**{: #REQ_OUT_008 }"
+        auto_standby_mode_entering:
+          description: "Auto Standby mode entering"
+          min: "$-$"
+          typ: "$-$"
+          max: "$120$"
+          unit: "$^{\\circ}C$"
+          requirement_code: "**REQ_OUT_009**{: #REQ_OUT_009 }"
+        auto_rest:
+          description: "Auto Restricted mode entering"
+          min: "$-$"
+          typ: "$-$"
+          max: "$90$"
+          unit: "$^{\\circ}C$"
+          requirement_code: "**REQ_OUT_010**{: #REQ_OUT_010 }"
 
   restricted:
     input_power:
@@ -156,6 +254,44 @@ modes:
           max: "$60$"
           unit: "$^{\\circ}C$"
           requirement_code: "**REQ_INP_017**{: #REQ_INP_017 }"
+    output_power:
+      columns: ["Description", "Min", "Typ", "Max", "Unit", "Requirement Code"]
+      rows:
+        output_voltage:
+          description: "Output Voltage"
+          min: "$-$"
+          typ: "$-$"
+          max: "$5$"
+          unit: "$V$"
+          requirement_code: "**REQ_OUT_011**{: #REQ_OUT_011 }"
+        output_current:
+          description: "Output Current"
+          min: "$-$"
+          typ: "$-$"
+          max: "$20$"
+          unit: "$A$"
+          requirement_code: "**REQ_OUT_012**{: #REQ_OUT_012 }"
+        output_power:
+          description: "Output Power"
+          min: "$-$"
+          typ: "$-$"
+          max: "$70$"
+          unit: "$W$"
+          requirement_code: "**REQ_OUT_013**{: #REQ_OUT_013 }"
+        auto_standby_mode_entering:
+          description: "Auto Standby mode entering"
+          min: "$-$"
+          typ: "$-$"
+          max: "$120$"
+          unit: "$^{\\circ}C$"
+          requirement_code: "**REQ_OUT_014**{: #REQ_OUT_014 }"
+        auto_active_mode_entering:
+          description: "Auto Active mode entering"
+          min: "$85$"
+          typ: "$-$"
+          max: "$-$"
+          unit: "$^{\\circ}C$"
+          requirement_code: "**REQ_OUT_015**{: #REQ_OUT_015 }"
 
   fail_safe:
     input_power:
@@ -175,3 +311,20 @@ modes:
           max: ["$25$", "$12$"]
           unit: ["$A$", "$V$"]
           requirement_code: ["**REQ_INP_019**{: #REQ_INP_019 }", "**REQ_INP_020**{: #REQ_INP_020 }"]
+    output_power:
+      columns: ["Description", "Min", "Typ", "Max", "Unit", "Requirement Code"]
+      rows:
+        output_voltage:
+          description: "Output Voltage"
+          min: "$-$"
+          typ: "$-$"
+          max: "$0$"
+          unit: "$V$"
+          requirement_code: "**REQ_OUT_016**{: #REQ_OUT_016 }"
+        auto_standby_mode_entering:
+          description: "Auto Standby mode entering"
+          min: "$-$"
+          typ: "$-$"
+          max: "$35$"
+          unit: "$A$"
+          requirement_code: "**REQ_OUT_017**{: #REQ_OUT_017 }"
