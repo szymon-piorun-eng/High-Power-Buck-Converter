@@ -156,3 +156,66 @@ TST_OUT_001:
   metadata:
     type: "Laboratory"
     status: "Draft"
+
+TST_OUT_002:
+  id: "**TST_OUT_002**{: #TST_OUT_002 }"
+  title: "Active and Restricted mode lockout in case of shorted output"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_OUT_003:
+  id: "**TST_OUT_003**{: #TST_OUT_003 }"
+  title: "Active and Restricted mode lockout in case of too high output temperature"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_OUT_004:
+  id: "**TST_OUT_004**{: #TST_OUT_004 }"
+  title: "Auto Restricted mode entering in case of high output temperature"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_OUT_005:
+  id: "**TST_OUT_005**{: #TST_OUT_005 }"
+  title: "Output voltage in Deep Sleep mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_OUT_006:
+  id: "**TST_OUT_006**{: #TST_OUT_006 }"
+  title: "Maximum output voltage in Active mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_OUT_007:
+  id: "**TST_OUT_007**{: #TST_OUT_007 }"
+  title: "Maximum output current in Active mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_OUT_008:
+  id: "**TST_OUT_008**{: #TST_OUT_008 }"
+  title: "Maximum output power in Active mode"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_OUT_009:
+  id: "**TST_OUT_009**{: #TST_OUT_009 }"
+  title: "Auto Standby mode entering in case of output overheating"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
+
+TST_OUT_010:
+  id: "**TST_OUT_010**{: #TST_OUT_010 }"
+  title: "Auto Restricted mode entering in case of output overheating"
+  metadata:
+    type: "Laboratory"
+    status: "Draft"
